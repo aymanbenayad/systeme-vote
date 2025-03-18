@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Wardoxy/systeme-vote/issues"
   },
-  "homepage": "https://github.com/Wardoxy/systeme-vote#readme"
+  "homepage": "https://github.com/Wardoxy/systeme-vote#readme",
+  "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.6.1"
+  }
 }

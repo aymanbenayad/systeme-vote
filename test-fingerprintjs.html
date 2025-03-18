@@ -28,23 +28,24 @@
     <h2>Votre empreinte digitale :</h2>
     <div id="fingerprint">Chargement...</div>
 
-    <script>
-        // Initialisation de FingerprintJS avec la version 3 gratuite
-        const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
-            .then(FingerprintJS => FingerprintJS.load())
+    <!-- Inclure le fichier local fp.min.js -->
+    <script src="node_modules/@fingerprintjs/fingerprintjs/dist/fp.min.js"></script>
 
-        // Récupérer l'identifiant de l'utilisateur
-        fpPromise
-            .then(fp => fp.get())
-            .then(result => {
-                // Cet identifiant correspond à l'empreinte digitale
+    <script>
+        // Initialisation de FingerprintJS avec le fichier local
+        FingerprintJS.load().then(fp => {
+            fp.get().then(result => {
+                // Afficher l'identifiant de l'utilisateur
                 const visitorId = result.visitorId;
                 document.getElementById("fingerprint").innerText = visitorId;
-            })
-            .catch(error => {
+            }).catch(error => {
                 document.getElementById("fingerprint").innerText = "Erreur de chargement de l'empreinte";
                 console.error(error);
             });
+        }).catch(error => {
+            document.getElementById("fingerprint").innerText = "Erreur de chargement de FingerprintJS";
+            console.error(error);
+        });
     </script>
 
 </body>
