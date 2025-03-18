@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Wardoxy/systeme-vote#readme",
   "dependencies": {
-    "@fingerprintjs/fingerprintjs": "^4.6.1"
+    "@fingerprintjs/fingerprintjs": "^4.6.1",
+    "crypto-js": "^4.2.0"
   }
 }
