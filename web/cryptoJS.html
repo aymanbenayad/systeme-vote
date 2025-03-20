@@ -27,8 +27,15 @@
     <p><strong>Chiffré :</strong> <span id="encryptedText"></span></p>
     <p><strong>Déchiffré :</strong> <span id="decryptedText"></span></p>
 
+    <h3>Ajouter un message codé et le décoder :</h3>
+    <label for="codedMessage">Message codé :</label>
+    <input type="text" id="codedMessage" placeholder="Entrez le message codé">
+
+    <button onclick="handleCodedMessage()">Décoder</button>
+    <p><strong>Message décodé :</strong> <span id="decodedMessage"></span></p>
+
     <script>
-        const secretKey = "motdepassedetest_!!12!!"; // Clé secrète (doit être sécurisée)
+        const secretKey = "passwd"; // Clé secrète (doit être sécurisée)
         
         // Fonction de chiffrement
         function encryptAES(text) {
@@ -81,6 +88,13 @@
             }
 
             document.getElementById("decryptedText").textContent = decrypted;
+        }
+
+        // Décoder un message codé
+        function handleCodedMessage() {
+            let codedMessage = document.getElementById("codedMessage").value;
+            let decoded = decryptAES(codedMessage);
+            document.getElementById("decodedMessage").textContent = decoded;
         }
     </script>
 
