@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background-color: rgba(14, 122, 199, 0.657);
+  background-image: url("../img/fondnature2comp.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  width: 90%;
+  max-width: clamp(300px, 80vw, 3000px);
+  height: clamp(50px, 10vh, 70px);
+  border: 1px solid #113C4D;
+  background-color: rgba(94, 199, 255, 0.1); /* 0.8 pour 80% d'opacité */
+  backdrop-filter: blur(10px); /* Effet flou pour un rendu plus moderne */
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: clamp(5px, 1vh, 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(10px, 2vw, 20px);
+}
+
+.logo {
+  width: clamp(80px, 10vw, 100px);
+  height: auto;
+  transition: transform 0.1s ease;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.1s ease;
+}
+
+
+.logo img:hover {
+  transform:scale(1.001);
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: clamp(14px, 1.5vw, 18px);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+.nav-links a:active {
+  transform: scale(0.9);
+}
+
+.social-icons {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 15px);
+  transition: transform 0.3s ease;
+}
+
+.social-icons img {
+  width: clamp(24px, 3vw, 32px);
+  height: clamp(24px, 3vw, 32px);
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.3);
+}
+
+.social-icons img:active {
+  transform: scale(0.95);
+}
+
+.hero {
+  text-align: center;
+  margin-top: 20vh;
+  max-width: clamp(300px, 80vw, 1400px);
+}
+
+.hero-title {
+  font-weight: 900;
+  color: #07093C;
+  font-size: clamp(32px, 6vw, 64px);
+  margin-bottom: clamp(10px, 2vh, 20px);
+  font-family: Raleway;
+  line-height: 1.2;
+}
+
+.hero-subtitle-desktop {
+  color: #000;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 20px);
+  margin-bottom: clamp(25px, 5vh, 50px);
+  font-family: Raleway;
+  line-height: 1.6;
+}
+
+.hero-subtitle-phone {
+  color: #000;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 20px);
+  margin-bottom: clamp(25px, 5vh, 50px);
+  font-family: Raleway;
+  line-height: 1.6;
+}
+
+.strong-blue {
+  color: #07093C;
+  font-weight: bold;
+}
+
+.cta-button {
+  padding: clamp(10px, 2vh, 20px) clamp(20px, 4vw, 40px);
+  font-size: clamp(14px, 1.5vw, 22px);
+  color: #FFF;
+  font-family: Montserrat;
+  font-weight: 400;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: clamp(10px, 1.5vh, 15px);
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0356b0;
+  transform:scale(1.03);
+}
+
+.cta-button:active {
+  transform: scale(0.9);
+}
+
+.login-text {
+  font-family: Montserrat;
+  font-weight: normal;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #040732;
+  text-decoration: underline;
+}
+
+.login-text a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(15px, 2.5vh, 25px);
+  max-width: clamp(300px, 60vw, 900px);
+  width: 100%;
+  margin: 0 auto;
+}
+
+form input {
+  padding: clamp(10px, 2vh, 20px);
+  font-size: clamp(14px, 1.5vw, 18px);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: clamp(40px, 6vh, 60px);
+}
+
+form button {
+  padding: clamp(10px, 2vh, 20px) clamp(20px, 4vw, 40px);
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: #FFF;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  height: clamp(40px, 6vh, 60px);
+  transition: transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0356b0;
+  transform:scale(1.03);
+}
+
+.form button:active {
+  transform: scale(0.95);
+}
+
+.form-title {
+  font-size: clamp(24px, 5vw, 48px);
+  font-weight: 900;
+  color: #07093C;
+  margin-bottom: clamp(20px, 4vh, 40px);
+  font-family: Raleway;
+}
+
+.switch-form {
+  margin-top: clamp(20px, 4vh, 40px);
+  font-family: Montserrat;
+  font-size: clamp(16px, 2vw, 24px);
+  color: #06428F;
+  font-weight: 400;
+}
+
+.switch-form a {
+  color: #007BFF;
+  font-family: Montserrat;
+  text-decoration: none;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: clamp(20px, 4vw, 40px);
+}
+
+.name-container {
+  display: flex;
+  gap: clamp(8px, 2vw, 20px); /* Espace relatif entre Nom et Prénom */
+  width: 100%;
+}
+
+.name-container input {
+  flex: 1; /* Permet aux inputs de s'ajuster dynamiquement */
+  min-width: 120px; /* Empêche les inputs d'être trop petits */
+}
+
+
+.password-toggle {
+  position: absolute;
+  right: clamp(5px, 1vw, 10px);
+  cursor: pointer;
+  width: clamp(18px, 2.4vw, 24px);
+  height: clamp(18px, 2.4vw, 24px);
+}
+
+.error-message {
+  color: red;
+  font-size: clamp(12px, 1.5vw, 18px);
+  margin-top: clamp(5px, 0.5vh, 10px);
+}
+
+.bold-image {
+  filter: drop-shadow(3px 0 0 black) 
+          drop-shadow(-3px 0 0 black) 
+          drop-shadow(0 3px 0 black) 
+          drop-shadow(0 -3px 0 black);
+}
+
+.burger-menu {
+  position: fixed;
+  top: clamp(10px, 1.5vh, 15px);
+  right: clamp(10px, 1.5vw, 15px);
+  font-size: clamp(24px, 3.6vw, 36px);
+  cursor: pointer;
+  z-index: 1000;
+  color:#FFF;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: clamp(200px, 25vw, 250px);
+  height: 100%;
+  background-color: rgba(53, 51, 51, 0.7);
+  color: white;
+  padding: clamp(10px, 2vh, 20px);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav ul li {
+  margin: clamp(10px, 2vh, 20px) 0;
+}
+
+.mobile-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.social-icons-phone {
+  display: flex;
+  gap: clamp(14px, 2.1vw, 21px);
+  transition: transform 0.3s ease;
+}
+
+.social-icons-phone img {
+  width: clamp(33.6px, 4.2vw, 44.8px);
+  height: clamp(33.6px, 4.2vw, 44.8px);
+  transition: transform 0.3s ease;
+}
+
+.terms-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.terms-text {
+  font-size: clamp(12px, 2vw, 16px); /* Taille de police adaptable */
+  line-height: 1.6; /* Interligne pour améliorer la lisibilité */
+  color: #333; /* Couleur de texte par défaut */
+  margin: clamp(10px, 2vw, 15px) 0; /* Espacement autour du texte */
+  text-align: center; /* Centrer le texte */
+}
+
+.terms-text a {
+  color: #000000; /* Couleur du lien */
+  text-decoration: underline;
+  font-weight: bolder; /* Mettre le lien en gras */
+}
+
+.popup-content {
+  background-color: white;
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: 0px;
+  width: clamp(300px, 50%, 600px);
+  max-width: 90%;
+  text-align: left; /* Alignement du texte à gauche */
+  max-height: 80vh; /* Limite la hauteur de la fenêtre */
+  overflow-y: auto; /* Ajoute une barre de défilement si nécessaire */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+  font-size: clamp(12px, 4vw, 17px);
+  text-align: center;
+  font-weight: bold;
+}
+
+.popup-content p {
+  margin-bottom: 15px;
+  font-weight: light;
+  font-size: clamp(10px, 3vw, 13px); /* Taille du texte flexible */
+  line-height: 1.6;
+}
+
+.popup-content button {
+  padding: clamp(5px, 2vw, 7.5px) clamp(10px, 5vw, 15px);
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: clamp(14px, 3vw, 18px);
+  margin-top: 20px;
+}
+
+.popup-content button:hover {
+  background-color: #0356b0;
+}
+
+.terms-popup a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.terms-popup a:hover {
+  text-decoration: underline;
+}

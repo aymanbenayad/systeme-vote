@@ -1,0 +1,283 @@
+/* Pour les petits écrans (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero-subtitle-desktop {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+}
+
+/* Pour les écrans moyens (min-width: 769px) */
+@media (min-width: 769px) {
+  .hero-subtitle-phone {
+    display: none;
+  }
+}
+
+/* Pour les très petits écrans (max-width: 320px) */
+@media (max-width: 320px) {
+  .navbar {
+    height: clamp(40px, 8vh, 60px);
+    padding: 0 clamp(5px, 1vw, 10px);
+  }
+  .logo {
+    width: clamp(60px, 8vw, 80px);
+  }
+  .nav-links a {
+    font-size: clamp(12px, 1.2vw, 14px);
+  }
+  .social-icons img {
+    width: clamp(18px, 2.2vw, 22px);
+    height: clamp(18px, 2.2vw, 22px);
+  }
+  .hero-title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+  .hero-subtitle {
+    font-size: clamp(14px, 1.8vw, 16px);
+    margin-bottom: clamp(15px, 3vh, 25px);
+  }
+  .cta-button {
+    padding: clamp(8px, 1.5vh, 15px) clamp(15px, 3vw, 30px);
+    font-size: clamp(12px, 1.2vw, 14px);
+  }
+  .form-title {
+    font-size: clamp(20px, 4vw, 28px);
+  }
+  form input {
+    padding: clamp(8px, 1.5vh, 15px);
+    font-size: clamp(12px, 1.2vw, 14px);
+    height: clamp(35px, 5vh, 50px);
+  }
+  form button {
+    padding: clamp(8px, 1.5vh, 15px) clamp(15px, 3vw, 30px);
+    font-size: clamp(12px, 1.2vw, 14px);
+    height: clamp(35px, 5vh, 50px);
+  }
+  .switch-form {
+    font-size: clamp(14px, 1.8vw, 16px);
+  }
+  .password-toggle {
+    width: clamp(16px, 2vw, 20px);
+    height: clamp(16px, 2vw, 20px);
+  }
+  .error-message {
+    font-size: clamp(10px, 1.2vw, 12px);
+  }
+  .burger-menu {
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+  .mobile-nav {
+    width: clamp(150px, 20vw, 200px);
+  }
+  .mobile-nav ul li a {
+    font-size: clamp(12px, 1.8vw, 14px);
+  }
+
+  /* Nouvelles classes adaptées aux très petits écrans */
+  .social-icons-phone {
+    gap: clamp(14px, 2.1vw, 21px);
+  }
+  .social-icons-phone img {
+    width: clamp(33.6px, 4.2vw, 44.8px);
+    height: clamp(33.6px, 4.2vw, 44.8px);
+  }
+  .terms-popup .popup-content {
+    padding: clamp(20px, 5vw, 40px);
+    width: clamp(300px, 50%, 600px);
+  }
+  .popup-content h3 {
+    font-size: clamp(12px, 4vw, 17px);
+  }
+  .popup-content p {
+    font-size: clamp(10px, 3vw, 13px);
+  }
+  .popup-content button {
+    padding: clamp(5px, 2vw, 7.5px) clamp(10px, 5vw, 15px);
+    font-size: clamp(14px, 3vw, 18px);
+  }
+}
+
+/* Pour les grands écrans (min-width: 2560px) */
+@media (min-width: 2560px) {
+  .navbar {
+    height: clamp(80px, 10vh, 100px);
+    padding: 0 clamp(20px, 2vw, 30px);
+  }
+  .logo {
+    width: clamp(120px, 12vw, 150px);
+  }
+  .nav-links a {
+    font-size: clamp(20px, 1.8vw, 24px);
+  }
+  .social-icons img {
+    width: clamp(36px, 3.2vw, 40px);
+    height: clamp(36px, 3.2vw, 40px);
+  }
+  .hero-title {
+    font-size: clamp(72px, 7vw, 112px);
+  }
+  .hero-subtitle-desktop {
+    font-size: clamp(24px, 2.2vw, 28px);
+    margin-bottom: clamp(50px, 6vh, 70px);
+  }
+  .cta-button {
+    padding: clamp(20px, 3vh, 30px) clamp(40px, 5vw, 60px);
+    font-size: clamp(20px, 1.8vw, 24px);
+  }
+  .login-text {
+    font-size: clamp(24px, 2.2vw, 28px);
+  }
+  .form-title {
+    font-size: clamp(48px, 5vw, 64px);
+  }
+  form input {
+    padding: clamp(20px, 3vh, 30px);
+    font-size: clamp(20px, 1.8vw, 24px);
+    height: clamp(70px, 8vh, 90px);
+  }
+  form button {
+    padding: clamp(20px, 3vh, 30px) clamp(40px, 5vw, 60px);
+    font-size: clamp(20px, 1.8vw, 24px);
+    height: clamp(70px, 8vh, 90px);
+  }
+  .switch-form {
+    font-size: clamp(24px, 2.2vw, 28px);
+  }
+  .password-toggle {
+    width: clamp(32px, 3vw, 36px);
+    height: clamp(32px, 3vw, 36px);
+  }
+  .error-message {
+    font-size: clamp(18px, 1.8vw, 20px);
+  }
+
+  .terms-text {
+    font-size:32px; 
+  }
+
+  .burger-menu {
+    font-size: clamp(36px, 3.5vw, 40px);
+  }
+  .mobile-nav {
+    width: clamp(300px, 25vw, 350px);
+  }
+  .mobile-nav ul li a {
+    font-size: clamp(24px, 2.2vw, 28px);
+  }
+
+  /* Nouvelles classes pour grands écrans */
+  .social-icons-phone {
+    gap: clamp(28px, 4vw, 42px);
+  }
+  .social-icons-phone img {
+    width: clamp(67.2px, 8.4vw, 89.6px);
+    height: clamp(67.2px, 8.4vw, 89.6px);
+  }
+  .popup-content {
+    padding: clamp(40px, 5vw, 60px);
+    width: clamp(600px, 50%, 800px);
+  }
+  .popup-content h3 {
+    font-size: clamp(24px, 4vw, 34px);
+  }
+  .popup-content p {
+    font-size: clamp(18px, 3vw, 22px);
+  }
+  .popup-content button {
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 5vw, 25px);
+    font-size: clamp(18px, 3vw, 24px);
+  }
+}
+
+/* Pour les écrans extra larges (min-width: 3840px) */
+@media (min-width: 3840px) {
+  .navbar {
+    height: clamp(100px, 12vh, 120px);
+    padding: 0 clamp(30px, 3vw, 40px);
+  }
+  .logo {
+    width: clamp(150px, 15vw, 180px);
+  }
+  .nav-links a {
+    font-size: clamp(24px, 2.2vw, 28px);
+  }
+  .social-icons img {
+    width: clamp(48px, 4vw, 52px);
+    height: clamp(48px, 4vw, 52px);
+  }
+  .hero-title {
+    font-size: clamp(96px, 8vw, 112px);
+  }
+  .hero-subtitle-desktop {
+    font-size: clamp(28px, 2.5vw, 36px);
+    margin-bottom: clamp(70px, 8vh, 90px);
+  }
+  .cta-button {
+    padding: clamp(30px, 4vh, 40px) clamp(60px, 6vw, 80px);
+    font-size: clamp(24px, 2.2vw, 36px);
+  }
+
+  .login-text {
+    font-size: clamp(24px, 2.2vw, 36px);
+  }
+  .form-title {
+    font-size: clamp(64px, 6vw, 80px);
+  }
+  form input {
+    padding: clamp(30px, 4vh, 40px);
+    font-size: clamp(24px, 2.2vw, 28px);
+    height: clamp(90px, 10vh, 110px);
+  }
+  form button {
+    padding: clamp(30px, 4vh, 40px) clamp(60px, 6vw, 80px);
+    font-size: clamp(24px, 2.2vw, 28px);
+    height: clamp(90px, 10vh, 110px);
+  }
+  .terms-text {
+    font-size:32px; 
+  }
+  .switch-form {
+    font-size: clamp(28px, 2.5vw, 32px);
+  }
+  .password-toggle {
+    width: clamp(40px, 4vw, 44px);
+    height: clamp(40px, 4vw, 44px);
+  }
+  .error-message {
+    font-size: clamp(20px, 2vw, 24px);
+  }
+  .burger-menu {
+    font-size: clamp(48px, 4.5vw, 52px);
+  }
+  .mobile-nav {
+    width: clamp(400px, 30vw, 450px);
+  }
+  .mobile-nav ul li a {
+    font-size: clamp(28px, 2.5vw, 32px);
+  }
+
+  /* Nouvelles classes pour extra larges */
+  .social-icons-phone {
+    gap: clamp(35px, 4.5vw, 52px);
+  }
+  .social-icons-phone img {
+    width: clamp(84px, 9vw, 104px);
+    height: clamp(84px, 9vw, 104px);
+  }
+  .popup-content {
+    padding: clamp(50px, 6vw, 70px);
+    width: clamp(800px, 50%, 1000px);
+  }
+  .popup-content h3 {
+    font-size: clamp(28px, 4vw, 38px);
+  }
+  .popup-content p {
+    font-size: clamp(20px, 3vw, 26px);
+  }
+  .popup-content button {
+    padding: clamp(12px, 2.5vw, 18px) clamp(24px, 5vw, 30px);
+    font-size: clamp(20px, 3vw, 26px);
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap">
+    <title>EcoVision - Vote</title>
+    <link rel="icon" type="image/png" href="assets/img/32pxlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/32pxlogo.ico">
+    <link rel="stylesheet" href="assets/css/styles1.css">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <link rel="stylesheet" href="assets/css/media-queries.css">
+    <script src="assets/js/phone.js" defer></script>
+    <script src="assets/js/timer2.js" defer></script>
+</head>
+<div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeModal">&times;</span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-text" id="modalText"></p>
+        <button class="vote-button">Votez</button>
+    </div>
+</div>
+<body class="body-blur">
+    <img src="assets/img/fondnature2comp.webp" style="display: none;"
+        onload="document.body.style.backgroundImage = 'url(assets/img/fondnature2comp.webp)';">
+    <div class="container">
+        <!-- Barre de navigation -->
+        <header class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logo.png" alt="Eco-Vision">
+                </a>
+            </div>
+            <!-- Liens de navigation -->
+            <nav class="nav-links">
+                <a href="profil.html">Profil</a>
+                <a href="vote.html">Vote</a>
+                <a href="resultats.html">Résultats</a>
+                <a href="contactez.html">Contactez-Nous</a>
+            </nav>
+            <!-- Réseaux sociaux -->
+            <div class="social-icons image-bold">
+                <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/img/linkedinlogo.png" alt="LinkedIn" class="social-icons"
+                        style="margin-top: -3px;">
+                </a>
+
+                <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer"><img
+                        src="assets/img/instagramlogo.png" alt="Instagram" class="image-bold"></a>
+                <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer"><img
+                        src="assets/img/twitterlogo.png" alt="Twitter" class="image-bold"></a>
+            </div>
+        </header>
+
+        <main class="vote-container">
+            <div class="vote-card">
+                <img class="vote-image" src="assets/img/solaire.jpg" alt="Ville Solaire">
+                <div class="vote-text">
+                    <h2 class="vote-title">Ville Solaire</h2>
+                </div>
+            </div>
+            <div class="vote-card">
+                <img class="vote-image" src="assets/img/mobilite-verte.jpg" alt="Mobilité Verte">
+                <div class="vote-text">
+                    <h2 class="vote-title">Mobilité Verte</h2>
+                </div>
+            </div>
+            <div class="vote-card">
+                <img class="vote-image" src="assets/img/forets-urbaines.jpg" alt="Forêts Urbaines">
+                <div class="vote-text">
+                    <h2 class="vote-title">Forêts Urbaines</h2>
+                </div>
+            </div>
+            <div class="vote-card">
+                <img class="vote-image" src="assets/img/ville-zero-gaspillage.jpg" alt="Ville Zéro Gaspillage">
+                <div class="vote-text">
+                    <h2 class="vote-title">Ville Zéro Gaspillage</h2>
+                </div>
+            </div>
+            <div class="vote-card">
+                <img class="vote-image" src="assets/img/batiments-intelligents.jpg" alt="Bâtiments Intelligents">
+                <div class="vote-text">
+                    <h2 class="vote-title">Bâtiments Intelligents</h2>
+                </div>
+            </div>
+            <div class="vote-card">
+                <img class="vote-image" src="assets/img/dechets-ressources.jpg" alt="Déchets = Ressources">
+                <div class="vote-text">
+                    <h2 class="vote-title">Déchets = Ressources</h2>
+                </div>
+            </div>
+        </main>
+        <div class="vote-message">
+            <p class="vote-now">Votez maintenant !</p>
+            <a href="index.html" class="cant-vote">Vous devez être connecté pour voter.</a>
+            <p class="already-voted">Vous avez déjà voté.</p>
+        </div>
+        <div class="mini-timer">
+            <span>Il reste: </span><span id="mini-timer"></span>
+        </div>
+        
+        <script src="assets/js/vote.js" defer></script>
+</body>
+
+</html>
