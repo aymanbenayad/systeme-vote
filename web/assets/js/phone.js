@@ -24,19 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <li><a href="profil.html">Profil</a></li>
                         <li><a href="vote.html">Vote</a></li>
                         <li><a href="resultats.html">Résultats</a></li>
-                        <li><a href="cryptoJS.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    <div class="social-icons-phone">
-                        <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/linkedinlogo.png" alt="LinkedIn" class="social-icon-phone" style="margin-top: -3px;;">
-                        </a>
-                        <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/instagramlogo.png" alt="Instagram" class="social-phone">
-                        </a>
-                        <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/twitterlogo.png" alt="Twitter" class="social-phone">
-                        </a>
-                    </div>
                 `;
                 document.body.appendChild(mobileNav);
             }

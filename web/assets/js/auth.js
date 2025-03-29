@@ -33,15 +33,31 @@ function showSignupForm() {
   // Bascule vers le formulaire de connexion
   document.getElementById('switch-to-login').addEventListener('click', showLoginForm);
 
-  // Validation de la confirmation de mot de passe
+  // Mise à jour dynamique de la force du mot de passe
+  document.getElementById('signup-password').addEventListener('input', function() {
+    const password = this.value;
+    const errorMessage = document.getElementById('password-error');
+    const strength = zxcvbn(password);
+    if (strength.score < 3) { // 0 ou 1 => mot de passe trop faible
+      errorMessage.textContent = 'Mot de passe trop faible.';
+    } else {
+      errorMessage.textContent = '';
+    }
+  });
+
+  // Validation de la confirmation de mot de passe et de la force du mot de passe
   document.getElementById('signup-form').addEventListener('submit', function(e) {
     const password = document.getElementById('signup-password').value;
     const confirmPassword = document.getElementById('signup-confirm-password').value;
     const errorMessage = document.getElementById('password-error');
+    const strength = zxcvbn(password);
 
     if (password !== confirmPassword) {
       e.preventDefault();
       errorMessage.textContent = 'Les mots de passe ne correspondent pas.';
+    } else if (strength.score < 3) {
+      e.preventDefault();
+      errorMessage.textContent = 'Mot de passe trop faible. Veuillez choisir un meilleur mot de passe.';
     } else {
       errorMessage.textContent = '';
     }

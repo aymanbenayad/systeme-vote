@@ -4,10 +4,14 @@
   box-sizing: border-box;
 }
 
+body, html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 body {
   font-family: Montserrat, sans-serif;
-  background-color: rgba(14, 122, 199, 0.657);
-  background-image: url("../img/fondnature2comp.webp");
+  background-color: rgba(13, 122, 200, 0.389);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,12 +78,11 @@ body {
 }
 
 .nav-links a:hover {
-  transform: scale(1.1);
   font-weight: 600;
 }
 
 .nav-links a:active {
-  transform: scale(0.9);
+  transform: scale(0.97);
 }
 
 .social-icons {
@@ -273,7 +276,7 @@ form button:hover {
 .error-message {
   color: red;
   font-size: clamp(12px, 1.5vw, 18px);
-  margin-top: clamp(5px, 0.5vh, 10px);
+  margin-top: clamp(2px, 0.25vh, 5px);
 }
 
 .bold-image {
@@ -326,17 +329,6 @@ form button:hover {
   font-size: clamp(14px, 2vw, 18px);
 }
 
-.social-icons-phone {
-  display: flex;
-  gap: clamp(14px, 2.1vw, 21px);
-  transition: transform 0.3s ease;
-}
-
-.social-icons-phone img {
-  width: clamp(33.6px, 4.2vw, 44.8px);
-  height: clamp(33.6px, 4.2vw, 44.8px);
-  transition: transform 0.3s ease;
-}
 
 .terms-popup {
   position: fixed;
@@ -356,7 +348,6 @@ form button:hover {
   font-size: clamp(12px, 2vw, 16px); /* Taille de police adaptable */
   line-height: 1.6; /* Interligne pour améliorer la lisibilité */
   color: #333; /* Couleur de texte par défaut */
-  margin: clamp(10px, 2vw, 15px) 0; /* Espacement autour du texte */
   text-align: center; /* Centrer le texte */
 }
 

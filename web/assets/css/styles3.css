@@ -1,0 +1,212 @@
+/* Container global */
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(1rem, 2vw, 2rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(7rem, 3vh, 10rem);
+}
+
+/* Partie gauche (À propos) */
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-title {
+  margin-top: clamp(5rem, 10vh, 10rem);
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #07093C;
+  margin-bottom: clamp(0.5rem, 1vh, 1rem);
+}
+
+.contact-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  line-height: 1.5;
+  margin-bottom: clamp(2rem, 4vh, 4rem);
+  display: inline;
+  vertical-align: middle;
+}
+
+.contact-subcategories {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #07093C;
+}
+
+.contact-footer {
+  margin-top: clamp(3rem, 4vh, 4rem);
+  text-align: center;
+}
+
+.contact-logo {
+  width: clamp(50px, 10vw, 100px);
+  margin-bottom: clamp(0.5rem, 1vh, 1rem);
+}
+
+.contact-email {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: clamp(1rem, 2vh, 2rem);
+}
+
+.contact-social a {
+  margin: 0 clamp(0.25rem, vw, 0.5rem);
+  display: inline-flex;
+  gap: clamp(0.25rem, 0.5vw, 0.5rem);
+}
+
+.contact-social img {
+  width: clamp(15px, 3vw, 30px);
+}
+
+/* Partie droite (formulaire) */
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 1.3rem;
+  border: clamp(1px, 0.2vw, 2px) solid #007BFF;
+  /* Bordure bleue */
+  background-color: transparent;
+  /* Pas de fond */
+  box-shadow: none;
+  /* Suppression de l'ombre */
+}
+
+.contact-right h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  color: #07093C;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.contact-right p {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(2rem, 3vh, 2rem);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vh, 2rem);
+}
+
+.name-container {
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  width: 100%;
+}
+
+.name-container input {
+  flex: 1;
+  padding: clamp(0.5rem, 1vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: clamp(0.5rem, 1vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  padding: clamp(0.75rem, 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #59a6c2;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form button:hover {
+  background-color: #48a1b8;
+}
+
+
+.profil-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: calc(100% - 20vw);
+  overflow: none;
+}
+
+.welcome-section {
+  margin-top: 15vh;
+  margin-bottom: 2rem;
+}
+
+.welcome-section h1 {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.welcome-section p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #555;
+}
+
+.info-section, .security-section {
+  margin-bottom: 2rem;
+}
+
+.info-section h2, .security-section h2 {
+  font-size: clamp(1.25rem, 1.75vw, 2rem);
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #007BFF;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.info-box, .security-box {
+  margin-bottom: 4vh;
+}
+
+.info-box p {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.logout-section {
+  margin-top: 2rem;
+}
