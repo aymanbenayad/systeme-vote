@@ -1,138 +1,132 @@
-/* Container global */
 .contact-section {
   display: flex;
   flex-direction: row;
-  gap: clamp(1rem, 2vw, 2rem);
-  padding: clamp(2rem, 5vw, 4rem);
-  margin-top: clamp(7rem, 3vh, 10rem);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 4vw, 4rem);
+  margin-top: clamp(2rem, 5vh, 5rem);
 }
 
-/* Partie gauche (À propos) */
 .contact-left {
   flex: 1;
-  min-width: 300px;
+  min-width: clamp(250px, 30vw, 350px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .contact-title {
-  margin-top: clamp(5rem, 10vh, 10rem);
+  margin-top: clamp(3rem, 8vh, 10rem);
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
   font-weight: 900;
   color: #07093C;
-  margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  margin-bottom: clamp(0.5rem, 2vh, 1.25rem);
 }
 
 .contact-text {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  line-height: 1.5;
-  margin-bottom: clamp(2rem, 4vh, 4rem);
+  font-size: clamp(0.875rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: clamp(1.5rem, 5vh, 4rem);
   display: inline;
   vertical-align: middle;
 }
 
 .contact-subcategories {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.5rem);
   font-weight: 700;
   color: #07093C;
 }
 
 .contact-footer {
-  margin-top: clamp(3rem, 4vh, 4rem);
+  margin-top: clamp(2rem, 6vh, 5rem);
   text-align: center;
 }
 
 .contact-logo {
-  width: clamp(50px, 10vw, 100px);
-  margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  width: clamp(40px, 12vw, 110px);
+  margin-bottom: clamp(0.5rem, 1.5vh, 1.25rem);
 }
 
 .contact-email {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  margin-bottom: clamp(1rem, 2vh, 2rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+  margin-bottom: clamp(0.75rem, 3vh, 2.5rem);
 }
 
 .contact-social a {
-  margin: 0 clamp(0.25rem, vw, 0.5rem);
+  margin: 0 clamp(0.2rem, 1vw, 0.6rem);
   display: inline-flex;
-  gap: clamp(0.25rem, 0.5vw, 0.5rem);
+  gap: clamp(0.2rem, 0.8vw, 0.6rem);
 }
 
 .contact-social img {
-  width: clamp(15px, 3vw, 30px);
+  width: clamp(15px, 4vw, 32px);
 }
 
-/* Partie droite (formulaire) */
 .contact-right {
   flex: 1;
-  min-width: 300px;
-  padding: clamp(1rem, 2vw, 1.5rem);
-  border-radius: 1.3rem;
-  border: clamp(1px, 0.2vw, 2px) solid #007BFF;
-  /* Bordure bleue */
+  min-width: clamp(280px, 30vw, 350px);
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: clamp(0.8rem, 1.5vw, 1.5rem);
+  border: clamp(1px, 0.3vw, 2.5px) solid #007BFF;
   background-color: transparent;
-  /* Pas de fond */
   box-shadow: none;
-  /* Suppression de l'ombre */
 }
 
 .contact-right h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
   color: #07093C;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 3.5vw, 2.2rem);
 }
 
 .contact-right p {
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(0.75rem, 1.5vw, 1rem);
-  margin-bottom: clamp(2rem, 3vh, 2rem);
+  font-size: clamp(0.7rem, 1.8vw, 1.1rem);
+  margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vh, 2rem);
+  gap: clamp(0.8rem, 3vh, 2.2rem);
 }
 
 .name-container {
   display: flex;
-  gap: clamp(0.5rem, 1vw, 1rem);
+  gap: clamp(0.4rem, 1.5vw, 1.2rem);
   width: 100%;
 }
 
 .name-container input {
   flex: 1;
-  padding: clamp(0.5rem, 1vw, 1rem);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  padding: clamp(0.4rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: clamp(0.7rem, 1vw, 2rem);
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
-  padding: clamp(0.5rem, 1vw, 1rem);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  padding: clamp(0.4rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: clamp(0.7rem, 1vw, 2rem);
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: clamp(120px, 20vh, 180px);
 }
 
 .contact-form button {
-  padding: clamp(0.75rem, 1.5vw, 1.5rem);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  padding: clamp(0.6rem, 1.8vw, 1.6rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: clamp(0.3rem, 0.8vw, 0.6rem);
   background-color: #59a6c2;
   color: #fff;
   cursor: pointer;
@@ -147,66 +141,101 @@
   background-color: #48a1b8;
 }
 
-
 .profil-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  width: calc(100% - 20vw);
-  overflow: none;
+  width: clamp(250px, 80%, 1200px);
+  overflow: auto;
 }
 
 .welcome-section {
-  margin-top: 15vh;
-  margin-bottom: 2rem;
+  margin-top: clamp(8vh, 15vh, 20vh);
+  margin-bottom: clamp(1rem, 3vh, 2.5rem);
 }
 
 .welcome-section h1 {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.3rem, 3vw, 2.8rem);
+  margin-bottom: clamp(0.3rem, 1vh, 0.7rem);
 }
 
 .welcome-section p {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.3rem);
   color: #555;
 }
 
 .info-section, .security-section {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
 }
 
 .info-section h2, .security-section h2 {
-  font-size: clamp(1.25rem, 1.75vw, 2rem);
-  margin-bottom: 0.75rem;
-  border-bottom: 2px solid #007BFF;
+  font-size: clamp(1.1rem, 2.5vw, 2.2rem);
+  margin-bottom: clamp(0.5rem, 1.2vh, 1rem);
+  border-bottom: clamp(0.175rem, 0.25vw, 0.25rem) solid #007BFF;
   display: inline-block;
-  padding-bottom: 0.25rem;
+  padding-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
 }
 
 .info-box, .security-box {
-  margin-bottom: 4vh;
+  margin-bottom: clamp(2vh, 4vh, 5vh);
 }
 
 .info-box p {
-  margin-bottom: 0.5rem;
+  margin-bottom: clamp(0.3rem, 0.8vh, 0.6rem);
 }
 
-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+.change-password {
+  padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.2rem, 2.5vw, 2rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   border: none;
-  border-radius: 4px;
+  border-radius: clamp(0.2rem, 0.5vw, 0.5rem);
   background-color: #007BFF;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+.change-password:hover {
+  background-color: #006bde;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.delete-account {
+  padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.2rem, 2.5vw, 2rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  border: none;
+  border-radius: clamp(0.2rem, 0.5vw, 0.5rem);
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-account:hover {
+  background-color: #bd2130;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.logout-button {
+  padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.2rem, 2.5vw, 2rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  border: 0.175rem solid #007BFF;
+  border-radius: clamp(0.2rem, 0.5vw, 0.5rem);
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #007BFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
 .logout-section {
-  margin-top: 2rem;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
 }

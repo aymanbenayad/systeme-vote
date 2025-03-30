@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 mobileNav.classList.add("mobile-nav");
                 mobileNav.innerHTML = `
                     <ul>
-                        <li><a href="/index.html">Accueil</a></li>
+                        <li><a href="index.html">Accueil</a></li>
                         <li><a href="profil.html">Profil</a></li>
                         <li><a href="vote.html">Vote</a></li>
                         <li><a href="resultats.html">Résultats</a></li>

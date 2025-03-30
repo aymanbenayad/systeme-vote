@@ -1,10 +1,10 @@
-.vote-container{
+.vote-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(1.5rem, 3vw, 3rem);
     justify-content: center;
     align-items: center;
-    margin: clamp(6rem, 16vh, 18rem) auto;
+    margin: clamp(5rem, 12vh, 14rem) auto;
     max-width: clamp(20rem, 85vw, 70rem);
     width: 100%;
     text-align: center;
@@ -17,7 +17,6 @@
     width: 100%;
     transition: transform 0.3s ease-in-out;
 }
-
 
 .vote-card:active {
     transform: scale(0.98);
@@ -45,7 +44,7 @@
 
 .vote-title {
     font-size: clamp(0.9rem, 2.2vw, 1.3rem);
-    font-weight: 1200;
+    font-weight: 600;
     color: #ffffff;
 }
 
@@ -69,7 +68,6 @@
     transition: color 0.1s ease;
 }
 
-
 .vote-now:hover {
     color: #5EC7FF;
 }
@@ -86,7 +84,7 @@
 }
 
 .cant-vote:active {
-    transform:scale(0.99);
+    transform: scale(0.99);
 }
 
 .already-voted {
@@ -106,31 +104,165 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(0.8rem);
     display: flex;
     align-items: center;
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
     z-index: 9999;
 }
 
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
 .modal-content {
-    background: #2D2D2D;
-    padding: clamp(2rem, 5vw, 3rem);
-    border-radius: 1rem;
-    text-align: center;
-    width: 80%;
-    max-width: clamp(30rem, 90vw, 50rem);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #2D2D2D, #1a1a1a);
+    padding: clamp(2.5rem, 5vw, 3.5rem);
+    border-radius: 1.2rem;
+    text-align: left;
+    width: clamp(18rem, 85%, 55rem);
+    max-width: clamp(32rem, 90vw, 55rem);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
     transform: scale(0.9);
     opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(0.875rem, 1.2vw, 1.2rem);
+    border-left: 4px solid #4CAF50;
+    position: relative;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #4CAF50;
+    position: relative;
+}
+
+.modal-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 3rem;
+    height: 3px;
+    background: #4CAF50;
+    border-radius: 3px;
+}
+
+.modal-text {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.modal-impact {
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.impact-title {
+    color: #4CAF50;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+.impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.impact-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.impact-list li::before {
+    content: '✓';
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.vote-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.vote-button:hover {
+    background: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(76, 175, 80, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.close-modal::before,
+.close-modal::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2px;
+    background: white;
+}
+
+.close-modal::before {
+    transform: rotate(45deg);
+}
+
+.close-modal::after {
+    transform: rotate(-45deg);
+}
+
+.modal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
 }
 
 .modal-overlay.active {
@@ -155,7 +287,7 @@
 
 .close-button:hover {
     color: #5EC7FF;
-    transform:scale(1.3);
+    transform: scale(1.3);
 }
 
 .close-button:focus {
@@ -163,16 +295,31 @@
 }
 
 .close-button:active {
-    transform:scale(0.8);
+    transform: scale(0.8);
+}
+
+.vote-button.voted {
+    background-color: #2e7d32;
+}
+
+.vote-button.voted i {
+    margin-right: 8px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .countdown-timer {
-    width: 50%;
-    height: 75px;
+    width: clamp(15rem, 50%, 30rem);
+    height: clamp(3.5rem, 7.5vh, 4.7rem);
     background-color: rgba(36, 55, 66, 0.7);
-    border-radius: 30px;
-    margin-top: 60vh;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: clamp(1.5rem, 3vw, 1.875rem);
+    margin: clamp(2rem, 5vh, 3rem) auto;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,47 +327,45 @@
 }
 
 #timer {
-    font-size: 3.5rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     color: #00FF9F;
     font-weight: bolder;
 }
 
 .mini-timer {
-    font-size: 1.5rem; /* Taille de police plus petite */
-    color: #00FF9F; /* Couleur du texte */
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: #00FF9F;
     font-weight: bold;
     text-align: center;
-    margin: 0; /* Suppression des marges */
+    margin: 0;
 }
 
-.mini-timer span{
-    font-size: 1.5rem; /* Taille de police plus petite */
-    color: #00b26e; /* Couleur du texte */
+.mini-timer span {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: #00b26e;
     font-family: Montserrat;
     font-weight: bold;
     text-align: center;
-    margin: 0; /* Suppression des marges */
+    margin: 0;
 }
-
 
 .mini-timer #mini-timer {
-    font-size: 1.5rem; /* Taille de police plus petite */
-    color: #00FF9F; /* Couleur du texte */
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: #00FF9F;
     font-weight: bold;
     text-align: center;
-    margin: 0; /* Pas de marges supplémentaires */
+    margin: 0;
 }
 
-
 .countdown-timer:hover {
-    transform:scale(1.03);
+    transform: scale(1.03);
 }
 
 .results {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: clamp(7vh, 15vw, 12vh);
+    margin-top: clamp(6rem, 8vh, 8rem);
 }
 
 .results h2 {
@@ -228,13 +373,27 @@
     font-weight: 900;
     color: #07093C;
     font-size: clamp(2rem, 4vw, 4rem);
-    margin: 0;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.results h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #00b26e;
+    opacity: 0.5;
+    border-radius: 1.5px;
 }
 
 .graph-selection {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    margin-bottom: 2rem;
 }
 
 .graph-selection label {
@@ -250,4 +409,24 @@
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
     background-color: #70b3a643;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.graph-selection select:hover,
+.graph-selection select:focus {
+    border-color: #00b26e;
+    outline: none;
+}
+
+.graph-container {
+    width: 70vw;
+    min-height: 50vh;
+    background-color: rgba(255, 255, 255, 0.023);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
