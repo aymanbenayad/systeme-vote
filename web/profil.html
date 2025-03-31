@@ -47,32 +47,39 @@
 
     <!-- Contenu du Profil -->
     <main class="profil-content">
-      <section class="welcome-section">
-        <h1>Bonjour <span id="prenom" style="color:rgb(199, 13, 13);">Ayman</span>,</h1>
-        <p id="vote-message">Votre vote a bien été enregistré !</p>
-        <!-- Ce paragraphe pourra être modifié dynamiquement (ex: "Vous n'avez toujours pas voté") -->
+      <section class="profil-welcome">
+        <h1 class="profil-title">Bonjour <span id="prenom" class="profil-name-highlight">Ayman</span>,</h1>
+        <p id="vote-message" class="profil-vote-status">Votre vote a bien été enregistré !</p>
       </section>
-
-      <section class="info-section">
-        <h2>Mes informations</h2>
-        <div class="info-box">
-          <p><strong>Prenom :</strong> Ayman</p>
-          <p><strong>Nom :</strong> Benayad</p>
-          <p><strong>Email :</strong> test@example.com</p>
+      
+      <section class="profil-info">
+        <h2 class="profil-section-title">Mes informations</h2>
+        <div class="profil-info-card">
+          <div class="profil-info-item">
+            <span class="profil-label">Prénom :</span>
+            <span class="profil-value">Ayman</span>
+          </div>
+          <div class="profil-info-item">
+            <span class="profil-label">Nom :</span>
+            <span class="profil-value">Benayad</span>
+          </div>
+          <div class="profil-info-item">
+            <span class="profil-label">Email :</span>
+            <span class="profil-value">test@example.com</span>
+          </div>
         </div>
       </section>
-
-      <section class="security-section">
-        <h2>Sécurité</h2>
-        <div class="security-box">
-          <button id="change-password" class="change-password">Changer mon mot de passe</button>
-          <br style="margin-bottom: 4vh;">
-          <button id="delete-account" class="delete-account">Supprimer mon compte</button>
+      
+      <section class="profil-security">
+        <h2 class="profil-section-title">Sécurité</h2>
+        <div class="profil-security-actions">
+          <button id="change-password" class="profil-btn profil-btn-primary">Changer mon mot de passe</button>
+          <button id="delete-account" class="profil-btn profil-btn-danger">Supprimer mon compte</button>
         </div>
       </section>
-
-      <section class="logout-section">
-        <button id="logout" class="logout-button">Se déconnecter</button>
+      
+      <section class="profil-logout">
+        <button id="logout" class="profil-btn profil-btn-outline">Se déconnecter</button>
       </section>
     </main>
   </div>

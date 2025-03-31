@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "Ce projet propose d'installer des panneaux solaires sur les toits des bâtiments publics afin de réduire la dépendance aux énergies fossiles et de favoriser la production d'énergie renouvelable. L'objectif est de maximiser l'autoconsommation énergétique des bâtiments et de réduire la facture énergétique.",
             impact: [
                 "Réduction de 40% des émissions de CO₂ des bâtiments municipaux",
-                "Économies annuelles estimées à 250 000€ sur les factures d'électricité",
-                "Création de 35 emplois locaux dans le secteur des énergies renouvelables",
-                "Production de 1,2 GWh d'électricité verte par an"
+                "Économies sur les factures d'électricité",
+                "Création d'emplois locaux dans le secteur des énergies renouvelables",
+                "Production d'électricité verte"
             ],
             icon: "fas fa-solar-panel"
         },
@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
             impact: [
                 "Réduction de 70% des déchets envoyés en décharge",
                 "Production locale de compost pour les espaces verts et jardins partagés",
-                "Création d'une filière locale de réemploi créant 40 emplois",
-                "Économie de 200 000€ par an sur les coûts de traitement des déchets"
+                "Création d'une filière locale de réemploi",
+                "Économie sur les coûts de traitement des déchets"
             ],
             icon: "fas fa-recycle"
         }

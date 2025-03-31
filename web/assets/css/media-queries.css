@@ -28,45 +28,47 @@
     font-size: 2rem;
   }
 
-  .contact-left {
+  .eco-contact-left {
     display: none;
   }
-  .contact-section {
+  .eco-contact-section {
     flex-direction: column;
+    background-color: transparent;
     padding: 0;
-    margin-top: -5rem;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
   }
 
-  .contact-right {
+  .eco-contact-right {
     width: 100vw;
     height: 100vh;
     min-width: unset;
     border: none;
     border-radius: 0;
-    padding: 5vw;
+    margin-top: -15vh;
+    padding: -5vw;
     box-shadow: none;
     background-color: transparent;
     display: flex;
     flex-direction: column;
+    backdrop-filter: none;
     justify-content: center;
   }
 
-  .contact-right h2 {
+  .eco-contact-right h2 {
     text-align: center;
   }
 
-  .contact-form {
+  .eco-contact-form {
     width: 100%;
   }
 
-  .contact-form button {
+  .eco-contact-form button {
     width: 100%;
   }
-  .contact-right p {
+  .eco-contact-right p {
     text-align: center;
   }
 }

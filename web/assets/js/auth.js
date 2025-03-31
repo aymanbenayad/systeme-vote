@@ -183,6 +183,11 @@ function showTermsPopup() {
       closePopup();
     }
   });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closePopup();
+    }
+});
 }
 
 // Écouteurs d'événements pour les boutons

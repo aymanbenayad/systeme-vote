@@ -185,14 +185,25 @@ form {
   max-width: clamp(18.75rem, 60vw, 56.25rem);
   width: 100%;
   margin: 0 auto;
+  /* Pas de fond ajouté - formulaire sur image */
 }
 
 form input {
   padding: clamp(0.625rem, 2vh, 1.25rem);
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  border: 1px solid #ccc;
+  border: 1px solid rgba(204, 204, 204, 0.8);
   border-radius: 1rem;
   height: clamp(2.5rem, 6vh, 3.75rem);
+  transition: border-color 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus {
+  outline: none;
+  border-color: rgba(0, 123, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 form button {
@@ -204,16 +215,22 @@ form button {
   border-radius: 1.25rem;
   cursor: pointer;
   height: clamp(2.5rem, 6vh, 3.75rem);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 600;
 }
 
 form button:hover {
-  background-color: #0356b0;
+  background-color: #0056b3;
   transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.form button:active {
+form button:active {
   transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .form-title {
@@ -222,6 +239,8 @@ form button:hover {
   color: #07093C;
   margin-bottom: clamp(1.25rem, 4vh, 2.5rem);
   font-family: Raleway;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.02em;
 }
 
 .switch-form {
@@ -230,6 +249,7 @@ form button:hover {
   font-size: clamp(1rem, 2vw, 1.5rem);
   color: #06428F;
   font-weight: 400;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .switch-form a {
@@ -238,6 +258,12 @@ form button:hover {
   text-decoration: none;
   font-weight: 600;
   text-decoration: underline;
+  transition: color 0.2s ease;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.switch-form a:hover {
+  color: #0056b3;
 }
 
 .password-container {
@@ -273,12 +299,21 @@ form button:hover {
   cursor: pointer;
   width: clamp(1.125rem, 2.4vw, 1.5rem);
   height: clamp(1.125rem, 2.4vw, 1.5rem);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.password-toggle:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .error-message {
-  color: red;
+  color: #ff3b36;
   font-size: clamp(0.75rem, 1.5vw, 1.125rem);
   margin-top: clamp(0.125rem, 0.25vh, 0.3125rem);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
 }
 
 .bold-image {
@@ -288,6 +323,7 @@ form button:hover {
           drop-shadow(0 -3px 0 black);
 }
 
+/* Icône du menu burger améliorée */
 .burger-menu {
   position: fixed;
   top: clamp(0.625rem, 1.5vh, 0.9375rem);
@@ -296,39 +332,71 @@ form button:hover {
   cursor: pointer;
   z-index: 1000;
   color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.burger-menu:hover {
+  transform: scale(1.1);
+}
+
+/* Menu de navigation amélioré */
 .mobile-nav {
   position: fixed;
   top: 0;
   right: -100%;
   width: clamp(12.5rem, 25vw, 15.625rem);
   height: 100%;
-  background-color: rgba(53, 51, 51, 0.7);
+  background: linear-gradient(to right, rgba(40, 40, 40, 0.9), rgba(53, 51, 51, 0.9));
   color: white;
   padding: clamp(0.625rem, 2vh, 1.25rem);
-  transition: right 0.3s ease-in-out;
+  transition: right 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   z-index: 999;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-nav.open {
   right: 0;
 }
 
+/* Liste de navigation améliorée */
 .mobile-nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: clamp(1.5rem, 4vh, 2rem) 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: clamp(0.5rem, 1vh, 0.75rem);
 }
 
 .mobile-nav ul li {
   margin: clamp(0.625rem, 2vh, 1.25rem) 0;
+  padding-left: 5px;
+  border-left: 2px solid transparent;
+  transition: border-left 0.2s ease;
 }
 
+.mobile-nav ul li:hover {
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Liens de navigation améliorés */
 .mobile-nav ul li a {
   color: white;
   text-decoration: none;
   font-size: clamp(0.875rem, 2vw, 1.125rem);
+  display: block;
+  padding: 8px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.mobile-nav ul li a:hover {
+  color: #e6e6e6;
+  transform: translateX(3px);
 }
 
 .terms-popup {
@@ -359,7 +427,7 @@ form button:hover {
 }
 
 .popup-content {
-  background-color: rgb(210, 204, 204);
+  background-color: rgba(255, 255, 255, 0.962);
   padding: clamp(1.25rem, 5vw, 2.5rem);
   border-radius: 1rem;
   width: clamp(18.75rem, 50%, 37.5rem);
@@ -379,7 +447,6 @@ form button:hover {
 
 .popup-content p {
   margin-bottom: 0.4375rem;
-  font-weight: 200;
   font-size: clamp(0.625rem, 3vw, 0.8125rem);
   line-height: 1.6;
 }
