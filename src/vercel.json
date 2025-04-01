@@ -26,11 +26,11 @@
       },
       {
         "source": "/404",
-        "destination": "/error-page",
+        "destination": "/error-page"
       },
       {
         "source": "/missing-page",
-        "destination": "/404",
+        "destination": "/404"
       }
     ]
   }
