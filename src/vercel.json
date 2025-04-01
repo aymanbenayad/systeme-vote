@@ -27,12 +27,10 @@
       {
         "source": "/404",
         "destination": "/error-page",
-        "permanent": false
       },
       {
         "source": "/missing-page",
         "destination": "/404",
-        "permanent": false
       }
     ]
   }
