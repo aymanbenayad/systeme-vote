@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Système de Vote</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --danger-color: #e74c3c;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --text-color: #ecf0f1;
+            --terminal-bg: #1a1a1a;
+            --terminal-text: #00ff00;
+            --sql-readonly-bg: #1a2639;
+            --sql-absolute-bg: #5a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .section {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .section-title {
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .terminal {
+            background-color: var(--terminal-bg);
+            color: var(--terminal-text);
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+            font-family: 'Courier New', monospace;
+            flex: 1;
+            overflow-y: auto;
+            height: 20rem;
+            border: 1px solid #444;
+            position: relative;
+        }
+
+        .terminal-output {
+            height: 85%;
+            overflow-y: auto;
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+
+        .terminal-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-input span {
+            margin-right: 0.5rem;
+        }
+
+        .terminal-input input {
+            background-color: transparent;
+            border: none;
+            color: var(--terminal-text);
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            outline: none;
+        }
+
+        .sql-terminal.readonly {
+            background-color: var(--sql-readonly-bg);
+        }
+
+        .sql-terminal.absolute {
+            background-color: var(--sql-absolute-bg);
+        }
+
+        .toggle-mode {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .toggle-mode:hover {
+            background-color: #2980b9;
+        }
+
+        .timer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .timer-display {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timer-date-input {
+            width: 100%;
+            max-width: 20rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+
+        .lock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lock-status {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .lock-status.locked {
+            background-color: var(--danger-color);
+        }
+
+        .lock-status.unlocked {
+            background-color: var(--success-color);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card {
+            background-color: var(--accent-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Système de Vote - Administration</h1>
+            <p>Panneau de contrôle administrateur</p>
+        </div>
+        <div class="user-info">
+            <span id="current-admin">admin@vote-sys.fr</span>
+            <button class="btn btn-danger" id="logout-btn">Déconnexion</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="section">
+            <div class="section-title">
+                <h2>Console Générale</h2>
+                <span>Terminal Unix</span>
+            </div>
+            <div class="terminal">
+                <div class="terminal-output" id="terminal-output">
+                    <div>Système de Vote v1.0.0</div>
+                    <div>Dernière connexion: Mardi 1 Avril 2025 09:45:23</div>
+                    <div>Type 'help' pour voir les commandes disponibles.</div>
+                    <div>&nbsp;</div>
+                    <div>admin@vote-sys:~$ status</div>
+                    <div>État du système: Actif</div>
+                    <div>Serveur: En ligne (Uptime: 7 jours, 14 heures)</div>
+                    <div>Charge CPU: 23%</div>
+                    <div>Mémoire: 1.7GB/4GB</div>
+                    <div>Base de données: Connectée</div>
+                    <div>Vote en cours: Oui</div>
+                </div>
+                <div class="terminal-input">
+                    <span>admin@vote-sys:~$</span>
+                    <input type="text" placeholder="Entrez une commande..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2>Console SQL</h2>
+                <div>
+                    <span>Mode: Lecture seule</span>
+                    <button class="toggle-mode">Changer de mode</button>
+                </div>
+            </div>
+            <div class="terminal sql-terminal readonly">
+                <div class="terminal-output">
+                    <div>MySQL [vote_system]> Connecté</div>
+                    <div>MySQL> SHOW TABLES;</div>
+                    <div>+------------------+</div>
+                    <div>| Tables           |</div>
+                    <div>+------------------+</div>
+                    <div>| users            |</div>
+                    <div>| votes            |</div>
+                    <div>| candidates       |</div>
+                    <div>| elections        |</div>
+                    <div>| logs             |</div>
+                    <div>+------------------+</div>
+                    <div>5 rows in set (0.01 sec)</div>
+                </div>
+                <div class="terminal-input">
+                    <span>MySQL></span>
+                    <input type="text" placeholder="Entrez une commande SQL..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2>Timer de Vote</h2>
+            </div>
+            <div class="timer-container">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-value">1245</div>
+                        <div class="stat-label">Votes Total</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">78</div>
+                        <div class="stat-label">Votants actifs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">43</div>
+                        <div class="stat-label">Minutes restantes</div>
+                    </div>
+                </div>
+                
+                <div class="timer-display">01:43:27</div>
+                
+                <div class="timer-controls">
+                    <button class="btn btn-warning">Pause</button>
+                    <button class="btn btn-primary">Réinitialiser</button>
+                </div>
+                
+                <div>
+                    <label for="target-date">Date cible:</label>
+                    <input type="datetime-local" id="target-date" class="timer-date-input" value="2025-04-01T11:30">
+                    <button class="btn btn-success">Définir</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2>Verrouillage du Système</h2>
+            </div>
+            <div class="lock-container">
+                <div class="lock-status unlocked">
+                    Système Déverrouillé
+                </div>
+                
+                <div>
+                    <button class="btn btn-danger">Verrouiller le Système</button>
+                </div>
+                
+                <div style="margin-top: 1rem;">
+                    <h3>Options de verrouillage</h3>
+                    <div style="margin: 1rem 0;">
+                        <input type="checkbox" id="lock-voting" checked>
+                        <label for="lock-voting">Verrouiller les votes</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lock-registration">
+                        <label for="lock-registration">Verrouiller les inscriptions</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lock-results">
+                        <label for="lock-results">Masquer les résultats</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+    "rewrites": [
+      {
+        "source": "/vote",
+        "destination": "/vote.html"
+      },
+      {
+        "source": "",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/contact.html"
+      },
+      {
+        "source": "/resultats",
+        "destination": "/resultats.html"
+      },
+      {
+        "source": "/profil",
+        "destination": "/profil.html"
+      },
+      {
+        "source": "/404",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/404",
+        "destination": "/error-page",
+        "permanent": false
+      },
+      {
+        "source": "/missing-page",
+        "destination": "/404",
+        "permanent": false
+      }
+    ]
+  }
+  
