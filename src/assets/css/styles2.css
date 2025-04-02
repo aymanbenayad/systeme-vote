@@ -122,8 +122,8 @@
 
 .modal-content {
     background: linear-gradient(145deg, #2D2D2D, #1a1a1a);
-    padding: clamp(2.5rem, 5vw, 3.5rem);
-    border-radius: 1.2rem;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+    border-radius: clamp(0.8rem, 1.5vw, 1.2rem);
     text-align: left;
     width: clamp(18rem, 85%, 55rem);
     max-width: clamp(32rem, 90vw, 55rem);
@@ -144,9 +144,9 @@
 }
 
 .modal-title {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.3rem, 3vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     color: #4CAF50;
     position: relative;
 }
@@ -156,7 +156,7 @@
     position: absolute;
     bottom: -0.5rem;
     left: 0;
-    width: 3rem;
+    width: clamp(2rem, 6vw, 3rem);
     height: 3px;
     background: #4CAF50;
     border-radius: 3px;
@@ -164,22 +164,23 @@
 
 .modal-text {
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.2rem, 3vw, 2rem);
     color: #e0e0e0;
+    font-size: clamp(0.85rem, 1.1vw, 1.1rem);
 }
 
 .modal-impact {
     background: rgba(76, 175, 80, 0.1);
-    border-radius: 0.8rem;
-    padding: 1.2rem;
-    margin-bottom: 2rem;
+    border-radius: clamp(0.5rem, 1vw, 0.8rem);
+    padding: clamp(0.8rem, 2vw, 1.2rem);
+    margin-bottom: clamp(1.2rem, 3vw, 2rem);
 }
 
 .impact-title {
     color: #4CAF50;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+    font-size: clamp(0.95rem, 1.2vw, 1.3rem);
 }
 
 .impact-list {
@@ -189,9 +190,10 @@
 }
 
 .impact-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: clamp(1.2rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.8rem, 1vw, 1rem);
 }
 
 .impact-list li::before {
@@ -206,13 +208,13 @@
     background: #4CAF50;
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     font-weight: 600;
-    border-radius: 2rem;
+    border-radius: clamp(1.5rem, 3vw, 2rem);
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 1rem;
+    margin-top: clamp(0.7rem, 1.5vw, 1rem);
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
 }
 
@@ -224,10 +226,10 @@
 
 .close-modal {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
+    top: clamp(0.7rem, 1.5vw, 1rem);
+    right: clamp(0.7rem, 1.5vw, 1rem);
+    width: clamp(1.5rem, 3vw, 2rem);
+    height: clamp(1.5rem, 3vw, 2rem);
     background: rgba(255, 255, 255, 0.1);
     border: none;
     border-radius: 50%;
@@ -246,7 +248,7 @@
 .close-modal::after {
     content: '';
     position: absolute;
-    width: 1rem;
+    width: clamp(0.7rem, 1.5vw, 1rem);
     height: 2px;
     background: white;
 }
@@ -260,26 +262,16 @@
 }
 
 .modal-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    margin-bottom: clamp(0.7rem, 1.5vw, 1rem);
     color: #4CAF50;
-}
-
-.modal-overlay.active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-    opacity: 1;
 }
 
 .close-button {
     position: absolute;
-    top: 1rem;
-    right: 1.2rem;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    top: clamp(0.7rem, 1.5vw, 1rem);
+    right: clamp(0.9rem, 1.8vw, 1.2rem);
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
     cursor: pointer;
     color: #E0E0E0;
     transition: color 0.2s ease, transform 0.2s ease;
@@ -303,14 +295,110 @@
 }
 
 .vote-button.voted i {
-    margin-right: 8px;
+    margin-right: clamp(5px, 1vw, 8px);
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+        border-left-width: 3px;
+    }
+    
+    .modal-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .modal-text {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .impact-title {
+        font-size: 1rem;
+    }
+    
+    .impact-list li {
+        font-size: 0.85rem;
+        padding-left: 1.2rem;
+    }
+    
+    .vote-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        padding: 1.2rem;
+        border-radius: 0.6rem;
+        border-left-width: 2px;
+        width: 95%;
+    }
+    
+    .modal-title {
+        font-size: 1.3rem;
+    }
+    
+    .modal-title::after {
+        width: 2rem;
+        height: 2px;
+    }
+    
+    .modal-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .modal-impact {
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+    }
+    
+    .impact-title {
+        font-size: 0.95rem;
+    }
+    
+    .impact-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .vote-button {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .close-button {
+        top: 0.5rem;
+        right: 0.7rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .modal-content {
+        padding: 1rem;
+    }
+    
+    .modal-title {
+        font-size: 1.2rem;
+    }
+    
+    .modal-text, .impact-list li {
+        font-size: 0.8rem;
+    }
 }
 
 .countdown-timer {

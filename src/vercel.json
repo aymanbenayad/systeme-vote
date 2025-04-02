@@ -9,6 +9,10 @@
         "destination": "/index.html"
       },
       {
+        "source": "/index",
+        "destination": "/index.html"
+      },
+      {
         "source": "/contact",
         "destination": "/contact.html"
       },
@@ -19,6 +23,10 @@
       {
         "source": "/profil",
         "destination": "/profil.html"
+      },
+      {
+        "source": "/error-page",
+        "destination": "/404.html"
       },
       {
         "source": "/404",
