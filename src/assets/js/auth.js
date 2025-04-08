@@ -7,32 +7,33 @@ const loginLink = document.getElementById('login-link');
 function showSignupForm() {
   hero.innerHTML = `
     <h2 class="form-title">Inscription</h2>
-    <form id="signup-form">
-      <div class="names-container">
-        <input type="text" id="signup-nom" placeholder="Nom (optionnel)">
-        <input type="text" id="signup-prenom" placeholder="Prénom" required>
-      </div>
-      <input type="email" placeholder="Email" required>
-      <div class="password-container">
-        <input type="password" id="signup-password" placeholder="Mot de passe" required>
-        <img src="assets/img/oeilferme.png" alt="Afficher le mot de passe" class="password-toggle image-bold" id="toggle-signup-password">
-      </div>
-      <div class="password-container">
-        <input type="password" id="signup-confirm-password" placeholder="Confirmer le mot de passe" required>
-        <img src="assets/img/oeilferme.png" alt="Afficher le mot de passe" class="password-toggle image-bold" id="toggle-confirm-password">
-      </div>
-      <p id="password-error" class="error-message"></p>
-      <p class="terms-text">
-        En vous inscrivant, vous acceptez nos <a href="#" id="terms-link">règles d'utilisation</a>.
-      </p>
-      <button type="submit">S'inscrire</button>
-    </form>
-    <p class="switch-form">Déjà un compte ? <a href="#" id="switch-to-login">Se connecter</a></p>
-  `;
+<form id="signup-form" action="backend/api/signup.php" method="POST">
+  <div class="names-container">
+    <input type="text" id="signup-nom" name="nom" placeholder="Nom (optionnel)">
+    <input type="text" id="signup-prenom" name="prenom" placeholder="Prénom" required>
+  </div>
+  <input type="email" id="signup-email" name="email" placeholder="Email" required>
+  <div class="password-container">
+    <input type="password" id="signup-password" name="password" placeholder="Mot de passe" required>
+    <img src="assets/img/oeilferme.png" alt="Afficher le mot de passe" class="password-toggle image-bold" id="toggle-signup-password">
+  </div>
+  <div class="password-container">
+    <input type="password" id="signup-confirm-password" placeholder="Confirmer le mot de passe" required>
+    <img src="assets/img/oeilferme.png" alt="Afficher le mot de passe" class="password-toggle image-bold" id="toggle-confirm-password">
+  </div>
+  <p id="password-error" class="error-message"></p>
+  <p class="terms-text">
+    En vous inscrivant, vous acceptez nos <a href="#" id="terms-link">règles d'utilisation</a>.
+  </p>
+  <button type="submit">S'inscrire</button>
+</form>
+<p class="switch-form">Déjà un compte ? <a href="#" id="switch-to-login">Se connecter</a></p>
 
+  `;
+  
   // Bascule vers le formulaire de connexion
   document.getElementById('switch-to-login').addEventListener('click', showLoginForm);
-
+  
   // Mise à jour dynamique de la force du mot de passe
   document.getElementById('signup-password').addEventListener('input', function () {
     const password = this.value;
@@ -44,25 +45,50 @@ function showSignupForm() {
       errorMessage.textContent = '';
     }
   });
-
-  // Validation de la confirmation de mot de passe et de la force du mot de passe
+  
+  // Un seul gestionnaire d'événements pour la validation et l'envoi
   document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Empêche la soumission par défaut du formulaire
+    
+    // Récupération des valeurs
+    const nom = document.getElementById('signup-nom').value;
+    const prenom = document.getElementById('signup-prenom').value;
+    const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
     const confirmPassword = document.getElementById('signup-confirm-password').value;
     const errorMessage = document.getElementById('password-error');
+    
+    // Vérification des mots de passe et de leur force
     const strength = zxcvbn(password);
-
+    let isValid = true;
+    
+    // Vérification de la correspondance des mots de passe
     if (password !== confirmPassword) {
-      e.preventDefault();
       errorMessage.textContent = 'Les mots de passe ne correspondent pas.';
-    } else if (strength.score < 2) {
-      e.preventDefault();
+      isValid = false;
+    } 
+    // Vérification de la force du mot de passe
+    else if (strength.score < 2) {
       errorMessage.textContent = 'Mot de passe trop faible. Veuillez choisir un meilleur mot de passe.';
-    } else {
+      isValid = false;
+    } 
+    else {
       errorMessage.textContent = '';
     }
+    
+    // Envoi des données uniquement si les vérifications passent
+    if (isValid) {
+      fetch("backend/api/signup.php", {  //Changer l'adresse du backend plustard
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+      })
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error("Erreur :", error));
+    }
   });
-
+  
   // Afficher/masquer le mot de passe principal
   document.getElementById('toggle-signup-password').addEventListener('click', function () {
     const passwordField = document.getElementById('signup-password');
