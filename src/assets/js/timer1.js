@@ -1,9 +1,9 @@
-let adminStartTime = new Date('2025-04-03T12:00:00'); 
+let adminStartTime = new Date('2025-04-17T12:00:00'); 
 let currentTime; // Variable pour stocker l'heure actuelle
 
 async function getCurrentTime() {
     try {
-        const response = await fetch('http://localhost:8000/api/time.php'); // A remplacer
+        const response = await fetch('http://localhost:8000/backend/api/time.php'); // A remplacer
         const data = await response.json();
         currentTime = new Date(data.datetime); // Stocke l'heure actuelle
     } catch (error) {

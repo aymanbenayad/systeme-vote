@@ -1,10 +1,10 @@
-let adminStartTime = new Date('2025-04-03T12:00:00'); 
+let adminStartTime = new Date('2025-04-17T12:00:00'); 
 let currentTime; // Variable pour stocker l'heure actuelle
 
 // Fonction pour récupérer l'heure du serveur en arrière-plan
 async function getCurrentTime() {
     try {
-        const response = await fetch('http://localhost:8000/api/time.php'); // A remplacer par l'URL de ton backend
+        const response = await fetch('http://localhost:8000/backend/api/time.php'); // A remplacer par l'URL de ton backend
         const data = await response.json();
         currentTime = new Date(data.datetime); // Stocke l'heure actuelle du serveur
         console.log("Heure récupérée depuis l'API:", currentTime); // Log pour vérifier

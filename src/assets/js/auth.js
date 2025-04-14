@@ -1,9 +1,7 @@
-// Sélection des éléments
 const hero = document.querySelector('.hero');
 const signupBtn = document.getElementById('signup-btn');
 const loginLink = document.getElementById('login-link');
 
-// Fonction pour afficher le formulaire d'inscription
 function showSignupForm() {
   hero.innerHTML = `
     <h2 class="form-title">Inscription</h2>
@@ -31,26 +29,33 @@ function showSignupForm() {
 
   `;
   
-  // Bascule vers le formulaire de connexion
+  FingerprintJS.load().then(fp => {
+    fp.get().then(result => {
+      const visitorId = result.visitorId;
+      fingerprint = visitorId;
+    }).catch(error => {
+      console.error(error);
+    });
+  }).catch(error => {
+    console.error(error);
+  });
+  
   document.getElementById('switch-to-login').addEventListener('click', showLoginForm);
   
-  // Mise à jour dynamique de la force du mot de passe
   document.getElementById('signup-password').addEventListener('input', function () {
     const password = this.value;
     const errorMessage = document.getElementById('password-error');
     const strength = zxcvbn(password);
-    if (strength.score < 2) { // 0 ou 1 => mot de passe trop faible
+    if (strength.score < 2) {
       errorMessage.textContent = 'Mot de passe trop faible.';
     } else {
       errorMessage.textContent = '';
     }
   });
   
-  // Un seul gestionnaire d'événements pour la validation et l'envoi
   document.getElementById('signup-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Empêche la soumission par défaut du formulaire
+    e.preventDefault();
     
-    // Récupération des valeurs
     const nom = document.getElementById('signup-nom').value;
     const prenom = document.getElementById('signup-prenom').value;
     const email = document.getElementById('signup-email').value;
@@ -58,16 +63,13 @@ function showSignupForm() {
     const confirmPassword = document.getElementById('signup-confirm-password').value;
     const errorMessage = document.getElementById('password-error');
     
-    // Vérification des mots de passe et de leur force
     const strength = zxcvbn(password);
     let isValid = true;
     
-    // Vérification de la correspondance des mots de passe
     if (password !== confirmPassword) {
       errorMessage.textContent = 'Les mots de passe ne correspondent pas.';
       isValid = false;
     } 
-    // Vérification de la force du mot de passe
     else if (strength.score < 2) {
       errorMessage.textContent = 'Mot de passe trop faible. Veuillez choisir un meilleur mot de passe.';
       isValid = false;
@@ -76,20 +78,25 @@ function showSignupForm() {
       errorMessage.textContent = '';
     }
     
-    // Envoi des données uniquement si les vérifications passent
     if (isValid) {
-      fetch("backend/api/signup.php", {  //Changer l'adresse du backend plustard
+      fetch("backend/api/signup.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+        body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&fingerprint=${encodeURIComponent(fingerprint)}`
       })
       .then(response => response.text())
-      .then(data => alert(data))
+      .then(data => {
+        if (data === "VALID_FOR_NEXT_STEP") {
+          showVerificationStep(email);
+        } else {
+          errorMessage.textContent = data; // sinon afficher l'erreur ou le message classique
+        }
+      })
+           
       .catch(error => console.error("Erreur :", error));
     }
   });
   
-  // Afficher/masquer le mot de passe principal
   document.getElementById('toggle-signup-password').addEventListener('click', function () {
     const passwordField = document.getElementById('signup-password');
     const toggleIcon = this;
@@ -103,7 +110,6 @@ function showSignupForm() {
     }
   });
 
-  // Afficher/masquer le mot de passe de confirmation
   document.getElementById('toggle-confirm-password').addEventListener('click', function () {
     const confirmPasswordField = document.getElementById('signup-confirm-password');
     const toggleIcon = this;
@@ -117,32 +123,29 @@ function showSignupForm() {
     }
   });
 
-  // Afficher la pop-up des règles d'utilisation
   document.getElementById('terms-link').addEventListener('click', function (e) {
     e.preventDefault();
     showTermsPopup();
   });
 }
 
-// Fonction pour afficher le formulaire de connexion
 function showLoginForm() {
   hero.innerHTML = `
     <h2 class="form-title">Connexion</h2>
     <form id="login-form">
-      <input type="email" placeholder="Email" required>
+      <input type="email" id="login-email" placeholder="Email" required>
       <div class="password-container">
         <input type="password" id="login-password" placeholder="Mot de passe" required>
         <img src="assets/img/oeilferme.png" alt="Afficher le mot de passe" class="password-toggle image-bold" id="toggle-login-password">
       </div>
+      <p id="password-error" class="error-message"></p>
       <button type="submit">Se connecter</button>
     </form>
     <p class="switch-form">Pas de compte ? <a href="#" id="switch-to-signup">S'inscrire</a></p>
   `;
 
-  // Bascule vers le formulaire d'inscription
   document.getElementById('switch-to-signup').addEventListener('click', showSignupForm);
 
-  // Afficher/masquer le mot de passe
   document.getElementById('toggle-login-password').addEventListener('click', function () {
     const passwordField = document.getElementById('login-password');
     const toggleIcon = this;
@@ -155,9 +158,27 @@ function showLoginForm() {
       toggleIcon.src = 'assets/img/oeilferme.png';
     }
   });
+  
+  document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const errorMessage = document.getElementById('password-error');
+    
+    fetch("backend/api/login.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    })
+    .then(response => response.text())
+    .then(data => {
+      errorMessage.textContent = data;
+    })    
+    .catch(error => console.error("Erreur :", error));
+  });
 }
 
-// Fonction pour afficher la pop-up des règles d'utilisation
 function showTermsPopup() {
   const popup = document.createElement('div');
   popup.className = 'terms-popup';
@@ -176,7 +197,7 @@ function showTermsPopup() {
   <p><strong>3. Sécurité et confidentialité</strong></p>
   <p>Nous générons une empreinte unique (fingerprint) pour chaque utilisateur afin d'assurer la sécurité du système et l'authentification unique.</p>
   <p>Cette empreinte est stockée de manière chiffrée (AES) et utilisée uniquement pour prévenir les fraudes.</p>
-  <p>Vos mots de passe sont stockés sous forme hachée (PBKDF2) pour garantir leur protection.</p>
+  <p>Vos mots de passe sont stockés sous forme hachée pour garantir leur protection.</p>
   <p>Vos données personnelles ne sont ni revendues ni partagées avec des tiers sans votre consentement.</p>
   
   <p><strong>4. Conservation et suppression des données</strong></p>
@@ -195,15 +216,12 @@ function showTermsPopup() {
 `;
   document.body.appendChild(popup);
 
-  // Fonction pour fermer la pop-up
   function closePopup() {
     popup.remove();
   }
 
-  // Fermeture de la popup en cliquant sur le bouton
   document.getElementById('close-popup').addEventListener('click', closePopup);
 
-  // Fermeture de la popup en cliquant en dehors de la fenêtre
   popup.addEventListener('click', function (e) {
     if (e.target === popup) {
       closePopup();
@@ -213,12 +231,41 @@ function showTermsPopup() {
     if (e.key === "Escape") {
       closePopup();
     }
-});
+  });
 }
 
-// Écouteurs d'événements pour les boutons
 signupBtn.addEventListener('click', showSignupForm);
 loginLink.addEventListener('click', (e) => {
   e.preventDefault();
   showLoginForm();
 });
+
+function showVerificationStep(email) {
+  hero.innerHTML = `
+    <h2 class="form-title">Vérification</h2>
+    <form id="verify-code-form">
+      <p class="info-text">Un code de vérification a été envoyé à <strong>${email}</strong>.</p>
+      <input type="text" id="verification-code" pattern="^[0-9]{6}$" placeholder="Code de vérification" required 
+       title="6 chiffres">
+
+      <p id="verification-error" class="error-message"></p>
+
+      <button type="submit">Vérifier</button>
+      <br>
+    </form>
+    <p class="terms-text">
+      Pas reçu le code ? <a href="#" id="resend-code">Renvoyer</a>
+    </p>
+  `;
+
+  document.getElementById('verify-code-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const code = document.getElementById('verification-code').value;
+    verifyCode(code); // À implémenter côté JS
+  });
+
+  document.getElementById('resend-code').addEventListener('click', function (e) {
+    e.preventDefault();
+    resendVerificationCode(email); // À implémenter aussi
+  });
+}

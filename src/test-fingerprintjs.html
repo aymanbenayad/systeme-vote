@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FingerprintJS Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        #fingerprint {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Votre empreinte digitale :</h2>
+    <div id="fingerprint">Chargement...</div>
+
+    <!-- Inclure le fichier local fp.min.js -->
+    <script src="assets/js/fp.min.js"></script>
+
+    <script>
+        // Initialisation de FingerprintJS avec le fichier local
+        FingerprintJS.load().then(fp => {
+            fp.get().then(result => {
+                // Afficher l'identifiant de l'utilisateur
+                const visitorId = result.visitorId;
+                document.getElementById("fingerprint").innerText = visitorId;
+            }).catch(error => {
+                document.getElementById("fingerprint").innerText = "Erreur de chargement de l'empreinte";
+                console.error(error);
+            });
+        }).catch(error => {
+            document.getElementById("fingerprint").innerText = "Erreur de chargement de FingerprintJS";
+            console.error(error);
+        });
+    </script>
+
+</body>
+</html>
