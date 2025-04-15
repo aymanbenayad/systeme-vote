@@ -23,7 +23,7 @@ function showSignupForm() {
   <p class="terms-text">
     En vous inscrivant, vous acceptez nos <a href="#" id="terms-link">règles d'utilisation</a>.
   </p>
-  <button type="submit">S'inscrire</button>
+  <button id="signup-button" type="submit">S'inscrire</button>
 </form>
 <p class="switch-form">Déjà un compte ? <a href="#" id="switch-to-login">Se connecter</a></p>
 
@@ -79,22 +79,37 @@ function showSignupForm() {
     }
     
     if (isValid) {
+      const signupButton = document.getElementById("signup-button");
+    
+      // Curseur en mode chargement + désactivation du bouton
+      document.body.style.cursor = "wait";
+      signupButton.disabled = true;
+      signupButton.textContent = "Chargement...";
+    
       fetch("backend/api/signup.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&fingerprint=${encodeURIComponent(fingerprint)}`
       })
-      .then(response => response.text())
-      .then(data => {
-        if (data === "VALID_FOR_NEXT_STEP") {
-          showVerificationStep(email);
-        } else {
-          errorMessage.textContent = data; // sinon afficher l'erreur ou le message classique
-        }
-      })
-           
-      .catch(error => console.error("Erreur :", error));
+        .then(response => response.text())
+        .then(data => {
+          if (data === "VALID_FOR_NEXT_STEP") {
+            showVerificationStep(nom, prenom, email, password, fingerprint);
+          } else {
+            errorMessage.textContent = data;
+          }
+        })
+        .catch(error => {
+          console.error("Erreur :", error);
+        })
+        .finally(() => {
+          // Remettre le curseur normal + réactiver le bouton
+          document.body.style.cursor = "default";
+          signupButton.disabled = false;
+          signupButton.textContent = "S'inscrire";
+        });
     }
+    
   });
   
   document.getElementById('toggle-signup-password').addEventListener('click', function () {
@@ -139,7 +154,7 @@ function showLoginForm() {
         <img src="assets/img/oeilferme.png" alt="Afficher le mot de passe" class="password-toggle image-bold" id="toggle-login-password">
       </div>
       <p id="password-error" class="error-message"></p>
-      <button type="submit">Se connecter</button>
+      <button id="login-button" type="submit">Se connecter</button>
     </form>
     <p class="switch-form">Pas de compte ? <a href="#" id="switch-to-signup">S'inscrire</a></p>
   `;
@@ -165,6 +180,10 @@ function showLoginForm() {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
     const errorMessage = document.getElementById('password-error');
+    const loginButton = document.getElementById("login-button");
+    document.body.style.cursor = "wait";
+    loginButton.disabled = true;
+    loginButton.textContent = "Chargement...";
     
     fetch("backend/api/login.php", {
       method: "POST",
@@ -175,7 +194,15 @@ function showLoginForm() {
     .then(data => {
       errorMessage.textContent = data;
     })    
-    .catch(error => console.error("Erreur :", error));
+    .catch(error => {
+      console.error("Erreur :", error);
+    })
+    .finally(() => {
+      // Remettre le curseur normal + réactiver le bouton
+      document.body.style.cursor = "default";
+      loginButton.disabled = false;
+      loginButton.textContent = "Se connecter";
+    });
   });
 }
 
@@ -240,7 +267,7 @@ loginLink.addEventListener('click', (e) => {
   showLoginForm();
 });
 
-function showVerificationStep(email) {
+function showVerificationStep(nom, prenom, email, password, fingerprint) {
   hero.innerHTML = `
     <h2 class="form-title">Vérification</h2>
     <form id="verify-code-form">
@@ -250,7 +277,7 @@ function showVerificationStep(email) {
 
       <p id="verification-error" class="error-message"></p>
 
-      <button type="submit">Vérifier</button>
+      <button type="submit" id="verify-button">Vérifier</button>
       <br>
     </form>
     <p class="terms-text">
@@ -261,11 +288,75 @@ function showVerificationStep(email) {
   document.getElementById('verify-code-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const code = document.getElementById('verification-code').value;
-    verifyCode(code); // À implémenter côté JS
+    verifyCode(code, nom, prenom, email, password, fingerprint);
   });
 
   document.getElementById('resend-code').addEventListener('click', function (e) {
     e.preventDefault();
-    resendVerificationCode(email); // À implémenter aussi
+    resendVerificationCode(nom, prenom, email, password, fingerprint);
   });
+
+
+  function resendVerificationCode(nom, prenom, email, password, fingerprint) {
+    const resendLink = document.getElementById('resend-code');
+    resendLink.textContent = 'Envoi en cours...';
+    resendLink.style.pointerEvents = 'none'; // Désactive les clics immédiatement
+  
+    fetch("backend/api/resend-code.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `email=${encodeURIComponent(email)}&fingerprint=${encodeURIComponent(fingerprint)}`
+    })
+    .then(response => response.text())
+    .then(data => {
+      if (data === "CODE_SENT") {
+        resendLink.textContent = 'Code renvoyé';
+        
+        // Réactive le bouton après 10 secondes
+        setTimeout(() => {
+          resendLink.textContent = 'Renvoyer';
+          resendLink.style.pointerEvents = 'auto'; // Réactive le bouton après 30 secondes
+        }, 30000);
+      } else {
+        document.getElementById('verification-error').textContent = data;
+        resendLink.textContent = 'Renvoyer';
+        resendLink.style.pointerEvents = 'auto'; // Réactive immédiatement en cas d'erreur
+      }
+    })
+    .catch(error => {
+      console.error("Erreur :", error);
+      resendLink.textContent = 'Renvoyer';
+      resendLink.style.pointerEvents = 'auto'; // Réactive le bouton même en cas d'erreur
+    });
+  }
+  
+  function verifyCode(code, nom, prenom, email, password, fingerprint) {
+    const verifyButton = document.getElementById("verify-button"); // Ton bouton de vérification
+    const errorMessage = document.getElementById("error-message"); // Ton conteneur pour les erreurs
+  
+    // Curseur loading + désactivation du bouton
+    document.body.style.cursor = "wait";
+    verifyButton.disabled = true;
+    verifyButton.textContent = "Chargement...";
+  
+    fetch("backend/api/verify_code.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&fingerprint=${encodeURIComponent(fingerprint)}&code=${encodeURIComponent(code)}`
+    })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('verification-error').textContent = data;
+      })
+      .catch(error => {
+        console.error("Erreur :", error);
+      })
+      .finally(() => {
+        document.body.style.cursor = "default";
+        verifyButton.disabled = false;
+        verifyButton.textContent = "Vérifier";
+      });
+  }
+  
+
 }
