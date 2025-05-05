@@ -1,0 +1,14 @@
+noreply.ecovision@gmail.com
+ecovision.vote@gmail.com
+3c0v15ion?pa55wd?
+
+apppass: bjkt sbnw pumf dfkg 
+
+BDD pass : UVD=v#w0ECyw8kwR
+
+Admin pass: nKYDeGExf8)d^@Vp
+
+sql logs command:
+SET global general_log = 1;
+SET global log_output = 'FILE';
+SET global general_log_file = '/backend/logs/sql/sql.log;

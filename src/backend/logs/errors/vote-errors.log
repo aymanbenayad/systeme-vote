@@ -1,0 +1,13 @@
+[19-Apr-2025 17:47:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`votes`, CONSTRAINT `votes_ibfk_2` FOREIGN KEY (`choice_id`) REFERENCES `choices` (`choice_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php:117
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php(117): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php on line 117
+[24-Apr-2025 16:28:54 UTC] PHP Warning:  Undefined variable $now in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php on line 28
+[24-Apr-2025 16:33:34 UTC] PHP Warning:  Undefined variable $now in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php on line 28
+[24-Apr-2025 16:33:46 UTC] PHP Warning:  Undefined variable $now in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php on line 28
+[24-Apr-2025 16:38:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`votes`, CONSTRAINT `votes_ibfk_2` FOREIGN KEY (`choice_id`) REFERENCES `choices` (`choice_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php:136
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php(136): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\vote.php on line 136

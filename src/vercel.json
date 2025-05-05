@@ -1,0 +1,49 @@
+{
+    "rewrites": [
+      {
+        "source": "/vote",
+        "destination": "/vote.html"
+      },
+      {
+        "source": "",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/index",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/contact.html"
+      },
+      {
+        "source": "/admin",
+        "destination": "/admin.html"
+      },
+      {
+        "source": "/resultats",
+        "destination": "/resultats.html"
+      },
+      {
+        "source": "/profil",
+        "destination": "/profil.html"
+      },
+      {
+        "source": "/error-page",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/404",
+        "destination": "/404.html"
+      },
+      {
+        "source": "/404",
+        "destination": "/error-page"
+      },
+      {
+        "source": "/missing-page",
+        "destination": "/404"
+      }
+    ]
+  }
+  

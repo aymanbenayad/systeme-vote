@@ -1,0 +1,95 @@
+[15-Apr-2025 09:34:49 UTC] PHP Warning:  Undefined variable $date in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 18
+[15-Apr-2025 09:34:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on null in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:18
+Stack trace:
+#0 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 18
+[15-Apr-2025 09:35:31 UTC] PHP Warning:  Undefined variable $codeProvided in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 52
+[15-Apr-2025 09:36:42 UTC] PHP Warning:  Undefined variable $codeProvided in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 53
+[15-Apr-2025 09:36:46 UTC] PHP Warning:  Undefined variable $codeProvided in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 53
+[15-Apr-2025 09:37:16 UTC] PHP Warning:  Undefined variable $codeProvided in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 53
+[15-Apr-2025 10:02:49 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:57
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(57): mysqli_prepare(Object(mysqli), 'INSERT INTO use...')
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 57
+[15-Apr-2025 10:03:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:57
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(57): mysqli_prepare(Object(mysqli), 'INSERT INTO use...')
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 57
+
+[17-Apr-2025 15:58:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`sessions`, CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:74
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(74): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 74
+[17-Apr-2025 15:59:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`sessions`, CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:74
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(74): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 74
+[17-Apr-2025 16:06:12 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'aymanmwa@gmail.com' for key 'users.email' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:56
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(56): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 56
+[17-Apr-2025 16:07:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'aymanmwa@gmail.com' for key 'users.email' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:56
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(56): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 56
+[17-Apr-2025 16:07:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'aymanmwa@gmail.com' for key 'users.email' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:56
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(56): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 56
+[17-Apr-2025 16:07:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`sessions`, CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:74
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(74): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 74
+[17-Apr-2025 16:09:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`sessions`, CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:74
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(74): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 74
+[17-Apr-2025 16:12:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'aymanmwa@gmail.com' for key 'users.email' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:56
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(56): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 56
+[17-Apr-2025 16:13:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ecovision`.`sessions`, CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE) in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:74
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(74): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 74
+[17-Apr-2025 16:15:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'aymanmwa@gmail.com' for key 'users.email' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:56
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(56): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 56
+[17-Apr-2025 16:16:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'user_id' cannot be null in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:80
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(80): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 80
+[17-Apr-2025 16:17:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'user_id' cannot be null in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:80
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(80): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 80
+[17-Apr-2025 16:18:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'user_id' cannot be null in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:81
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(81): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 81
+[17-Apr-2025 16:19:24 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'user_id' cannot be null in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:81
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(81): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 81
+[17-Apr-2025 16:23:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'aymanmwa@gmail.com' for key 'users.email' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php:56
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php(56): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\verify_code.php on line 56

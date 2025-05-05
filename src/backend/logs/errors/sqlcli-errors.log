@@ -1,0 +1,5 @@
+[24-Apr-2025 09:17:44 UTC] PHP Warning:  Undefined array key "password" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\admin\sqlcli.php on line 49
+[24-Apr-2025 09:19:18 UTC] PHP Warning:  Undefined array key "password" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\admin\sqlcli.php on line 49
+[24-Apr-2025 09:19:29 UTC] PHP Warning:  Undefined array key "password" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\admin\sqlcli.php on line 49
+[01-May-2025 20:27:08 UTC] Erreur SQL CLI: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+[01-May-2025 20:27:17 UTC] Erreur SQL CLI: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1

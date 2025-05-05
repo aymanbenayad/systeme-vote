@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoJS - Choix du cryptage</title>
+    <script src="libs/crypto-js.js"></script>
+</head>
+<body>
+
+    <h2>Chiffrement et déchiffrement avec CryptoJS</h2>
+    
+    <label for="message">Message à chiffrer :</label>
+    <input type="text" id="message" placeholder="Entrez un message">
+
+    <label for="algorithm">Choisir l'algorithme de cryptage :</label>
+    <select id="algorithm">
+        <option value="AES">AES</option>
+        <option value="SHA256">SHA-256</option>
+        <option value="PBKDF2">PBKDF2</option>
+    </select>
+    
+    <button onclick="handleEncryption()">Chiffrer</button>
+    <button onclick="handleDecryption()">Déchiffrer</button>
+
+    <h3>Résultats :</h3>
+    <p><strong>Chiffré :</strong> <span id="encryptedText"></span></p>
+    <p><strong>Déchiffré :</strong> <span id="decryptedText"></span></p>
+
+    <h3>Ajouter un message codé et le décoder :</h3>
+    <label for="codedMessage">Message codé :</label>
+    <input type="text" id="codedMessage" placeholder="Entrez le message codé">
+
+    <button onclick="handleCodedMessage()">Décoder</button>
+    <p><strong>Message décodé :</strong> <span id="decodedMessage"></span></p>
+
+    <script>
+        const secretKey = "passwd"; // Clé secrète (doit être sécurisée)
+        
+        // Fonction de chiffrement
+        function encryptAES(text) {
+            return CryptoJS.AES.encrypt(text, secretKey).toString();
+        }
+
+        // Fonction de déchiffrement pour AES
+        function decryptAES(encryptedText) {
+            let bytes = CryptoJS.AES.decrypt(encryptedText, secretKey);
+            return bytes.toString(CryptoJS.enc.Utf8);
+        }
+
+        // Fonction de chiffrement avec SHA-256
+        function encryptSHA256(text) {
+            return CryptoJS.SHA256(text).toString();
+        }
+
+        // Fonction de chiffrement avec PBKDF2
+        function encryptPBKDF2(text) {
+            return CryptoJS.PBKDF2(text, secretKey, { keySize: 256 / 32 }).toString();
+        }
+
+        // Gère le chiffrement avec affichage
+        function handleEncryption() {
+            let message = document.getElementById("message").value;
+            let algorithm = document.getElementById("algorithm").value;
+            let encrypted;
+
+            if (algorithm === "AES") {
+                encrypted = encryptAES(message);
+            } else if (algorithm === "SHA256") {
+                encrypted = encryptSHA256(message);
+            } else if (algorithm === "PBKDF2") {
+                encrypted = encryptPBKDF2(message);
+            }
+
+            document.getElementById("encryptedText").textContent = encrypted;
+        }
+
+        // Gère le déchiffrement avec affichage
+        function handleDecryption() {
+            let encrypted = document.getElementById("encryptedText").textContent;
+            let algorithm = document.getElementById("algorithm").value;
+            let decrypted;
+
+            if (algorithm === "AES") {
+                decrypted = decryptAES(encrypted);
+            } else {
+                decrypted = "Le déchiffrement n'est pas possible pour cet algorithme.";
+            }
+
+            document.getElementById("decryptedText").textContent = decrypted;
+        }
+
+        // Décoder un message codé
+        function handleCodedMessage() {
+            let codedMessage = document.getElementById("codedMessage").value;
+            let decoded = decryptAES(codedMessage);
+            document.getElementById("decodedMessage").textContent = decoded;
+        }
+    </script>
+
+</body>
+</html>

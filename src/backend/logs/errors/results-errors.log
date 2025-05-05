@@ -1,0 +1,46 @@
+[21-Apr-2025 16:18:08 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'c.label' in 'field list' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php:41
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php(41): mysqli->prepare('SELECT c.label,...')
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 41
+[21-Apr-2025 16:18:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'c.label' in 'field list' in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php:41
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php(41): mysqli->prepare('SELECT c.label,...')
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 41
+[21-Apr-2025 16:20:45 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:20:45 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:20:45 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:20:45 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:20:45 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:20:45 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:21 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:21 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:21 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:21 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:21 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:21 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:37 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:37 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:37 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:37 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:37 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:37 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:41 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:41 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:41 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:41 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:41 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:41 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:44 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:44 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:44 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:44 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:44 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:44 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:46 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:47 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:47 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:47 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:47 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48
+[21-Apr-2025 16:21:47 UTC] PHP Warning:  Undefined array key "label" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\resultat.php on line 48

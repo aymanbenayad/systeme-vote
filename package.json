@@ -1,0 +1,28 @@
+{
+  "name": "systeme-vote",
+  "version": "1.0.0",
+  "description": "End-of-Year Project 2024/2025 on the topic: Online Voting System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wardoxy/systeme-vote.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wardoxy/systeme-vote/issues"
+  },
+  "homepage": "https://github.com/Wardoxy/systeme-vote#readme",
+  "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.6.1",
+    "crypto-js": "^4.2.0",
+    "zxcvbn": "^4.4.2"
+  },
+  "devDependencies": {
+    "purify-css": "^1.2.5"
+  }
+}

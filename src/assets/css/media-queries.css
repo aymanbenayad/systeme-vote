@@ -1,0 +1,103 @@
+@media (max-width: 768px) {
+  .body-index {
+    background-image: url("../img/fondnaturephone.webp");
+  }
+  .hero-subtitle-desktop {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .body-blur {
+    background-image: url("../img/fondnaturephoneblur.webp");
+  }
+  .vote-container{
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  .vote-title {
+    font-size: clamp(0.6rem, 1.4vw, 0.8rem);
+    font-weight: 1200;
+    color: #ffffff;
+  }
+  .countdown-timer {
+    width: 20rem;
+    height: 6rem;
+  }
+  #timer {
+    font-size: 2rem;
+  }
+
+  .eco-contact-left {
+    display: none;
+  }
+  .eco-contact-section {
+    flex-direction: column;
+    background-color: transparent;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .eco-contact-right {
+    width: 100vw;
+    height: 100vh;
+    min-width: unset;
+    border: none;
+    border-radius: 0;
+    margin-top: -15vh;
+    padding: -5vw;
+    box-shadow: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: none;
+    justify-content: center;
+  }
+
+  .eco-contact-right h2 {
+    text-align: center;
+  }
+
+  .eco-contact-form {
+    width: 100%;
+  }
+
+  .eco-contact-form button {
+    width: 100%;
+  }
+  .eco-contact-right p {
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .body-index {
+    background-image: url("../img/fondnature.webp");
+  }
+  .hero-subtitle-phone {
+    display: none;
+  }
+  .body-blur {
+    background-image: url("../img/fondnatureblur.webp");
+  }
+}
+
+@media (max-width: 1660px) {
+  body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .navbar {
+    position: relative; 
+    width: clamp(16rem, 90%, 100%);
+    max-width: clamp(18.75rem, 80vw, 187.5rem);
+    left: 0;
+    transform: translateX(0);
+    margin: 0 auto;
+  }
+}
+
+

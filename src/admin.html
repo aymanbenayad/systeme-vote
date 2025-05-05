@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Vérification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        h1.success {
+            color: #4dff4d;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            max-width: 80%;
+            text-align: center;
+        }
+        .loading {
+            margin-top: 20px;
+            font-style: italic;
+            color: #cccccc;
+        }
+        .error {
+            color: #ff4d4d;
+        }
+        .success {
+            color: #4dff4d;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Vérification d'accès...</h1>
+    <p id="description">Vérification des droits d'administrateur en cours...</p>
+    <div id="loading" class="loading">Chargement...</div>
+    <div id="message"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const loading = document.getElementById('loading');
+
+    function executeScripts() {
+        const reloadScript = (script) => {
+            return new Promise((resolve) => {
+                const newScript = document.createElement('script');
+                Array.from(script.attributes).forEach(attr => {
+                    newScript.setAttribute(attr.name, attr.value);
+                });
+                if (!script.src && script.textContent) {
+                    newScript.textContent = script.textContent;
+                }
+                newScript.onload = resolve;
+                script.replaceWith(newScript);
+            });
+        };
+        return Promise.all(
+            Array.from(document.scripts).map(script => reloadScript(script))
+        );
+    }
+
+    fetch('https://systeme-vote-backend-production.up.railway.app/api/admin/isadmin.php', {
+        method: 'GET',
+        credentials: 'same-origin'
+    })
+    .then(async response => {
+        const contentType = response.headers.get('Content-Type') || '';
+
+        loading.style.display = 'none';
+
+        if (contentType.includes('application/json')) {
+            const data = await response.json();
+            if (data.status === 'error') {
+                throw new Error(data.message || 'Erreur inconnue');
+            }
+        } else if (contentType.includes('text/html')) {
+            const htmlContent = await response.text();
+
+            document.open();
+            document.write(htmlContent.trim());
+            document.close();
+
+            executeScripts().then(() => {
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.addEventListener('click', switchSection);
+                });
+            });
+        } else {
+            throw new Error('Type de réponse inattendu');
+        }
+    })
+    .catch(error => {
+        loading.style.display = 'none';
+        title.textContent = '❌ Erreur de connexion';
+        description.textContent = 'Impossible de vérifier vos droits d\'accès.';
+        message.innerHTML = `<p class="error">Erreur : ${error.message}</p>`;
+    });
+
+});
+
+    </script>
+</body>
+</html>

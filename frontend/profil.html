@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap">
+  <title>Profil / Ecovision</title>
+  <link rel="icon" type="image/png" href="assets/img/32pxlogo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/32pxlogo.ico">
+  <link rel="stylesheet" href="assets/css/styles1.css">
+  <link rel="stylesheet" href="assets/css/styles3.css">
+  <link rel="stylesheet" href="assets/css/media-queries.css">
+  <script src="assets/js/phone.js" defer></script>
+</head>
+<body class="body-blur">
+  <div class="container">
+    <!-- Barre de navigation -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index">
+          <img src="assets/img/logo.png" alt="Eco-Vision">
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="profil">Profil</a>
+        <a href="vote">Vote</a>
+        <a href="resultats">Résultats</a>
+        <a href="contact">Contactez-Nous</a>
+      </nav>
+      <div class="social-icons image-bold">
+        <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/linkedinlogo.png" alt="LinkedIn" class="image-bold" style="margin-top: -3px;">
+        </a>
+        <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/instagramlogo.png" alt="Instagram" class="image-bold">
+        </a>
+        <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/twitterlogo.png" alt="Twitter" class="image-bold">
+        </a>
+      </div>
+    </header>
+
+   <!-- Contenu du Profil -->
+   <main id="profil-content" class="profil-content">
+    <!-- Message de connexion requise -->
+    <div id="login-required" class="profil-login-message">
+      <h2>Connexion requise</h2>
+      <p>Vous devez être connecté pour accéder à votre profil.</p>
+      <a href="index" class="profil-btn profil-btn-primary">Se connecter</a>
+    </div>
+    
+    <!-- Contenu du profil (caché par défaut) -->
+    <div id="profil-authenticated" style="display: none;">
+      <section class="profil-welcome">
+        <h1 class="profil-title">Bonjour <span id="prenom" class="profil-name-highlight">Ayman</span>,</h1>
+      </section>
+     
+      <section class="profil-info">
+        <h2 class="profil-section-title">Mes informations</h2>
+        <div class="profil-info-card">
+          <div class="profil-info-item">
+            <span class="profil-label">Prénom :</span>
+            <span id="info-prenom" class="profil-value"></span>
+          </div>
+          <div class="profil-info-item">
+            <span class="profil-label">Nom :</span>
+            <span id="info-nom" class="profil-value"></span>
+          </div>
+          <div class="profil-info-item">
+            <span class="profil-label">Email :</span>
+            <span id="info-email" class="profil-value"></span>
+          </div>
+        </div>
+      </section>
+     
+      <section class="profil-security">
+        <h2 class="profil-section-title">Sécurité</h2>
+        <div class="profil-security-actions">
+          <button id="password-change-container" class="profil-btn profil-btn-primary">Changer mon mot de passe</button>
+          <button id="delete-account" class="profil-btn profil-btn-danger">Supprimer mon compte</button>
+        </div>
+      </section>
+     
+      <section class="profil-logout">
+        <button id="logout" class="profil-btn profil-btn-outline">Se déconnecter</button>
+      </section>
+    </div>
+  </main>
+  </div>
+  <script src="assets/js/changepass.js" defer></script>
+  <script src="assets/js/zxcvbn.js" defer></script>
+  <script src="assets/js/show-profile.js" defer></script>
+</body>
+</html>

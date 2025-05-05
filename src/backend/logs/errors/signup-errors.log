@@ -1,0 +1,14 @@
+[14-Apr-2025 15:34:50 UTC] PHP Warning:  file_get_contents(G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api/../libs/mail.paswd): Failed to open stream: No such file or directory in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 104
+[14-Apr-2025 15:34:51 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not authenticate. in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\libs\vendor\phpmailer\phpmailer\src\PHPMailer.php:2261
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\libs\vendor\phpmailer\phpmailer\src\PHPMailer.php(2058): PHPMailer\PHPMailer\PHPMailer->smtpConnect(Array)
+#1 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\libs\vendor\phpmailer\phpmailer\src\PHPMailer.php(1687): PHPMailer\PHPMailer\PHPMailer->smtpSend('Date: Mon, 14 A...', '\r\n    <html>\r\n ...')
+#2 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\libs\vendor\phpmailer\phpmailer\src\PHPMailer.php(1521): PHPMailer\PHPMailer\PHPMailer->postSend()
+#3 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php(237): PHPMailer\PHPMailer\PHPMailer->send()
+#4 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\libs\vendor\phpmailer\phpmailer\src\PHPMailer.php on line 2261
+[15-Apr-2025 08:34:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'last_date' doesn't have a default value in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php:134
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php(134): mysqli_stmt_execute(Object(mysqli_stmt))
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 134

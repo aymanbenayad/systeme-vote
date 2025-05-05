@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap">
+  <title>Contact / Ecovision</title>
+  <link rel="icon" type="image/png" href="assets/img/32pxlogo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/32pxlogo.ico">
+  <link rel="stylesheet" href="assets/css/styles1.css">
+  <link rel="stylesheet" href="assets/css/styles3.css">
+  <link rel="stylesheet" href="assets/css/media-queries.css">
+  <script src="assets/js/phone.js" defer></script>
+</head>
+
+<body class="body-blur">
+  <div class="container">
+    <!-- Barre de navigation -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index">
+          <img src="assets/img/logo.png" alt="Eco-Vision">
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="profil">Profil</a>
+        <a href="vote">Vote</a>
+        <a href="resultats">Résultats</a>
+        <a href="contact">Contactez-Nous</a>
+      </nav>
+      <div class="social-icons image-bold">
+        <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/linkedinlogo.png" alt="LinkedIn" class="image-bold" style="margin-top: -3px;">
+        </a>
+        <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/instagramlogo.png" alt="Instagram" class="image-bold">
+        </a>
+        <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/twitterlogo.png" alt="Twitter" class="image-bold">
+        </a>
+      </div>
+    </header>
+
+    <!-- Section Contact -->
+<section class="eco-contact">
+  <!-- À propos (partie gauche) -->
+  <div class="eco-contact-left">
+    <div class="eco-contact-info">
+      <h2 class="eco-contact-title">À propos</h2>
+      <p class="eco-contact-description">
+        "Eco-Vision" est un événement qui vise à imaginer et créer la ville durable de demain.
+        Les participants soumettent des idées innovantes pour rendre la ville plus écologique,
+        et le public a la possibilité de voter en ligne pour les meilleures propositions.
+        Les six projets en compétition abordent des enjeux cruciaux comme la transition énergétique, la mobilité verte,
+        la gestion des déchets et l'urbanisme écologique.
+      </p>
+      
+      <div class="eco-contact-detail">
+        <h4 class="eco-contact-subtitle">Gmail</h4>
+        <p class="eco-contact-text">ecovision.vote@gmail.com</p>
+      </div>
+      
+      <div class="eco-contact-detail">
+        <h4 class="eco-contact-subtitle">Adresse</h4>
+        <p class="eco-contact-text">Avenue Mohammed Ben Abdallah Regragui Madinat Al Irfane, BP 713, Agdal Rabat</p>
+      </div>
+    </div>
+    
+    <div class="eco-contact-footer">
+      <img src="assets/img/logo.png" alt="Eco-Vision" class="eco-contact-logo">
+      <p class="eco-contact-email">ecovision.vote@gmail.com</p>
+      <div class="eco-contact-social">
+        <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer" class="eco-social-link">
+          <img src="assets/img/linkedinlogo.png" alt="LinkedIn" class="eco-social-icon">
+        </a>
+        <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer" class="eco-social-link">
+          <img src="assets/img/instagramlogo.png" alt="Instagram" class="eco-social-icon">
+        </a>
+        <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer" class="eco-social-link">
+          <img src="assets/img/twitterlogo.png" alt="Twitter" class="eco-social-icon">
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Formulaire de Contact (partie droite) -->
+  <div class="eco-contact-right">
+    <div class="eco-contact-form-header">
+      <h2 class="eco-form-title">Contactez-Nous</h2>
+      <p class="eco-form-subtitle">Contactez-nous et nous vous répondrons dès que possible.</p>
+    </div>
+    
+    <form class="eco-contact-form" id="ecoContactForm">
+      <div class="eco-form-name-container">
+        <div class="eco-form-field">
+          <input type="text" name="nom" id="eco-nom" placeholder="Nom (optionnel)" class="eco-form-input">
+        </div>
+        <div class="eco-form-field">
+          <input type="text" name="prenom" id="eco-prenom" placeholder="Prénom" required class="eco-form-input">
+        </div>
+      </div>
+      
+      <div class="eco-form-field">
+        <input type="email" name="email" id="eco-email" placeholder="Email" required class="eco-form-input">
+      </div>
+      
+      <div class="eco-form-field">
+        <input type="text" name="objet" id="eco-objet" placeholder="Objet" required class="eco-form-input">
+      </div>
+      
+      <div class="eco-form-field">
+        <textarea name="message" id="eco-message" placeholder="Votre message..." required class="eco-form-textarea"></textarea>
+      </div>
+      
+      <button type="submit" class="eco-form-button" id="eco-submit-button">Envoyer</button>
+    </form>
+    <div id="eco-form-response" style="text-align: center;"></div>
+    <script>
+      const form = document.getElementById('ecoContactForm');
+const responseDiv = document.getElementById('eco-form-response');
+const submitButton = form.querySelector('button[type="submit"]');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Changer l'apparence de la souris et désactiver le bouton
+  document.body.style.cursor = 'wait';
+  submitButton.disabled = true;
+  submitButton.textContent = 'Envoi en cours...';
+  responseDiv.textContent = '';
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch('backend/api/send-mail.php', { //Fetch, modifier après hebergement
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const text = await response.text();
+    responseDiv.textContent = text;
+  } catch (err) {
+    responseDiv.textContent = "Une erreur est survenue. Veuillez réessayer.";
+  } finally {
+    // Remettre la souris et le bouton à l'état normal
+    document.body.style.cursor = 'default';
+    submitButton.disabled = false;
+    submitButton.textContent = 'Envoyer';
+  }
+});
+
+    </script>
+  </div>
+  
+  </div>
+</section>
+</body>
+
+</html>

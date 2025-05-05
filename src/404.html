@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap">
+  <title>EcoVision-404</title>
+  <link rel="icon" type="image/png" href="/assets/img/32pxlogo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/img/32pxlogo.ico">
+  <link rel="stylesheet" href="/assets/css/styles1.css">
+  <link rel="stylesheet" href="/assets/css/media-queries.css">
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 5vh;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: 900;
+      color: rgba(0, 0, 0, 0.889);
+      margin: 0;
+      line-height: 1;
+    }
+    
+    .error-message {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin: 1rem 0;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .error-description {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto;
+      color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .btn-home {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: rgba(46, 204, 113, 0.9);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .btn-home:hover {
+      background-color: rgba(39, 174, 96, 0.9);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 6rem;
+      }
+      
+      .error-message {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="body-index">
+  <div class="container">
+    <!-- Barre de navigation -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index">
+          <img src="assets/img/logo.png" alt="Eco-Vision">
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="profil">Profil</a>
+        <a href="vote">Vote</a>
+        <a href="resultats">Résultats</a>
+        <a href="contact">Contactez-Nous</a>
+      </nav>
+      <div class="social-icons image-bold">
+        <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/linkedinlogo.png" alt="LinkedIn" class="image-bold" style="margin-top: -3px;">
+        </a>
+        <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/instagramlogo.png" alt="Instagram" class="image-bold">
+        </a>
+        <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/twitterlogo.png" alt="Twitter" class="image-bold">
+        </a>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Page non trouvée</h2>
+        <p class="error-description">La page que vous recherchez n'existe pas ou a été déplacée.</p>
+        <a href="/index" class="btn-home">Retour à l'accueil</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

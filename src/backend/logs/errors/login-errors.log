@@ -1,0 +1,22 @@
+[17-Apr-2025 14:02:09 UTC] PHP Warning:  Undefined array key "fingerprint" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 13
+[17-Apr-2025 14:02:09 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 13
+[17-Apr-2025 14:05:34 UTC] PHP Warning:  Undefined array key "fingerprint" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 13
+[17-Apr-2025 14:05:34 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 13
+[17-Apr-2025 14:05:57 UTC] PHP Warning:  Undefined array key "fingerprint" in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 13
+[17-Apr-2025 14:05:57 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 13
+[24-Apr-2025 21:21:06 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt_bind_param(): Argument #3 could not be passed by reference in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php:68
+Stack trace:
+#0 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 68
+[24-Apr-2025 21:22:11 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt_bind_param(): Argument #3 could not be passed by reference in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php:68
+Stack trace:
+#0 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 68
+[24-Apr-2025 21:22:27 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt_bind_param(): Argument #3 could not be passed by reference in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php:68
+Stack trace:
+#0 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 68
+[24-Apr-2025 21:23:36 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt_bind_param(): Argument #3 could not be passed by reference in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php:68
+Stack trace:
+#0 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 68

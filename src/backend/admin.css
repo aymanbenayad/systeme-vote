@@ -1,0 +1,274 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #f8f9fa;
+    --accent-color: #3498db;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --border-color: #dee2e6;
+    --text-color: #333;
+    --sidebar-width: 270px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--primary-color);
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav {
+    padding: 10px 0;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background-color: var(--accent-color);
+    border-left: 4px solid white;
+}
+
+.content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+}
+
+.section {
+    display: none;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    height: 50vh;
+    border: 1px solid #444;
+    overflow-y: auto;
+}
+
+.terminal-output {
+    height: 85%;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 5px;
+    border-top: 1px solid #444;
+}
+
+.terminal-input span {
+    margin-right: 5px;
+    color: #00ff00;
+}
+
+.terminal-input input {
+    background-color: transparent;
+    border: none;
+    color: #00ff00;
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    outline: none;
+}
+
+.sql-terminal {
+    background-color: #1a2639;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.lock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.lock-status {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.lock-status.locked {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.lock-status.unlocked {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.lock-options {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+input[type="datetime-local"] {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.checkbox-group {
+    margin: 5px 0;
+}
+
+.lock-status.locked {
+    color: red;
+    font-weight: bold;
+  }
+  .lock-status.unlocked {
+    color: green;
+    font-weight: bold;
+  }
+  

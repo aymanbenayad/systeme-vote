@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap">
+    <title>Resultats / Ecovision</title>
+    <link rel="icon" type="image/png" href="assets/img/32pxlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/32pxlogo.ico">
+    <link rel="stylesheet" href="assets/css/styles1.css">
+  <link rel="stylesheet" href="assets/css/styles2.css">
+  <link rel="stylesheet" href="assets/css/styles3.css">
+  <link rel="stylesheet" href="assets/css/media-queries.css">
+    <script src="assets/js/phone.js" defer></script>
+    <script src="assets/js/timer1.js" defer></script>
+</head>
+
+<body class="body-blur">
+    <div class="container">
+        <!-- Barre de navigation -->
+        <header class="navbar">
+            <div class="logo">
+                <a href="index">
+                    <img src="assets/img/logo.png" alt="Eco-Vision">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="profil">Profil</a>
+                <a href="vote">Vote</a>
+                <a href="resultats">Résultats</a>
+                <a href="contact">Contactez-Nous</a>
+            </nav>
+            <div class="social-icons image-bold">
+                <a href="https://www.linkedin.com/in/aymanbenayad" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/img/linkedinlogo.png" alt="LinkedIn" class="image-bold"
+                      style="margin-top: -3px;">
+                  </a>
+                <a href="https://www.instagram.com/ensias.official" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/img/instagramlogo.png" alt="Instagram">
+                </a>
+                <a href="https://x.com/ensias_official" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/img/twitterlogo.png" alt="Twitter">
+                </a>
+            </div>
+        </header>
+        <!-- Résultats section -->
+        <section class="results">
+            <h2>Résultats :</h2>
+            <div class="graph-selection">
+                <label for="graphChoice">Choisir le type de graphique :</label>
+                <select id="graphChoice" name="graphChoice">
+                        <option value="bar">📊 Histogramme (Barres)</option>
+                        <option value="pie">🥧 Diagramme circulaire (Pie)</option>
+                        <option value="doughnut">🍩 Diagramme en anneau (Doughnut)</option>
+                        <option value="line">📉 Courbe (Line)</option>
+                    
+                </select>
+            </div>
+            <canva class="graph-container" id="graph-container"></canva>
+            <p id="resultat-error" class="error-message"></p>
+        </section>
+               
+        <!-- Compte à rebours -->
+        <div class="countdown-timer">
+            <span id="timer"></span>
+        </div>
+    </div>
+    <!-- Chart.js -->
+    <script src="/assets/js/chart.js"></script>
+    <script src="/assets/js/resultats.js"></script>
+
+</body>
+
+</html>

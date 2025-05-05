@@ -1,0 +1,5 @@
+[24-Apr-2025 08:37:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'ecovision.logs' doesn't exist in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\modify-password.php:75
+Stack trace:
+#0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\modify-password.php(75): mysqli_prepare(Object(mysqli), 'INSERT INTO log...')
+#1 {main}
+  thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\modify-password.php on line 75
