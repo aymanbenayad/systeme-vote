@@ -20,3 +20,7 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 68
+[28-May-2025 22:20:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php:90
+Stack trace:
+#0 {main}
+  thrown in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\login.php on line 90

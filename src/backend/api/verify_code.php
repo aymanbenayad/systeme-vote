@@ -1,7 +1,7 @@
 <?php
 // Configuration des rapports d'erreurs
 require_once './header.php';
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../logs/errors/verify-code-errors.log');
 error_reporting(E_ALL);
@@ -31,48 +31,6 @@ try {
     $new_sign_id = bin2hex(random_bytes(32));
     $codeProvided = isset($_POST['code']) ? trim($_POST['code']) : "";
 
-    // Validation des données
-    if (empty($nom) || !preg_match('/^[a-zA-ZÀ-ÿ\s\-\']{2,50}$/', $nom)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
-
-    if (empty($prenom) || !preg_match('/^[a-zA-ZÀ-ÿ\s\-\']{2,50}$/', $prenom)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
-
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
-
-    if (empty($password) || !preg_match('/(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9@\$#!%\*\?&\-_\+=\^\(\)]{8,128}/', $password)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
-
-    if (empty($fingerprint) || !preg_match('/^[a-zA-Z0-9]+$/', $fingerprint)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
-
-    if (empty($sign_ip) || !filter_var($sign_ip, FILTER_VALIDATE_IP)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
-
-    if (empty($codeProvided) || !preg_match('/^[0-9]{6}$/', $codeProvided)) {
-        http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Une erreur est survenue']);
-        exit();
-    }
 
     // Sanitization des données
     $nom = htmlspecialchars($nom, ENT_QUOTES, 'UTF-8');

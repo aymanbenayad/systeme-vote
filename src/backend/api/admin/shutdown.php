@@ -35,9 +35,9 @@ if (!isset($_COOKIE['session_token'])) {
 $session_token = $_COOKIE['session_token'];
 // Configuration de la base de données
 $servername = "localhost";
-$username = "root";
-$dbpassword = trim(file_get_contents(__DIR__ . '/../../libs/sql.passwd'));
-$dbname = "ecovision";
+    $username = "root";
+    $dbpassword = trim(file_get_contents(__DIR__ . '/../../libs/sql.passwd'));
+    $dbname = "ecovision";
 $conn = mysqli_connect($servername, $username, $dbpassword, $dbname);
     if (!$conn) {
         http_response_code(503); // Service Unavailable

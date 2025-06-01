@@ -7,7 +7,7 @@ let fingerprint = "";
 function showSignupForm() {
   hero.innerHTML = `
     <h2 class="form-title">Inscription</h2>
-    <form id="signup-form" action="https://systeme-vote-backend-production.up.railway.app/api/signup.php" method="POST">
+    <form id="signup-form" action="backend/api/signup.php" method="POST">
       <div class="names-container">
         <input type="text" id="signup-nom" name="nom"
                pattern="[A-Za-z\\u00C0-\\u00FF\\-\\s]{2,50}"
@@ -106,7 +106,7 @@ function showSignupForm() {
       signupButton.textContent = "Chargement...";
       const hashpassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
     
-      fetch("https://systeme-vote-backend-production.up.railway.app/api/signup.php", {
+      fetch("backend/api/signup.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(hashpassword)}&fingerprint=${encodeURIComponent(fingerprint)}}`
@@ -117,7 +117,7 @@ function showSignupForm() {
             showVerificationStep(nom, prenom, email, password, fingerprint);
 
             requestAnimationFrame(() => {
-              fetch("https://systeme-vote-backend-production.up.railway.app/api/send-code.php", {
+              fetch("backend/api/send-code.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: `email=${encodeURIComponent(email)}&fingerprint=${encodeURIComponent(fingerprint)}`
@@ -230,7 +230,7 @@ function showLoginForm() {
     loginButton.textContent = "Chargement...";
     const hashpassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
     
-    fetch("https://systeme-vote-backend-production.up.railway.app/api/login.php", {
+    fetch("backend/api/login.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(hashpassword)}&fingerprint=${encodeURIComponent(fingerprint)}`
@@ -375,7 +375,7 @@ function showVerificationStep(nom, prenom, email, password, fingerprint) {
     resendLink.textContent = 'Envoi en cours...';
     resendLink.style.pointerEvents = 'none'; // Désactive les clics immédiatement
   
-    fetch("https://systeme-vote-backend-production.up.railway.app/api/send-code.php", {
+    fetch("backend/api/send-code.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `email=${encodeURIComponent(email)}&fingerprint=${encodeURIComponent(fingerprint)}`
@@ -413,7 +413,7 @@ function showVerificationStep(nom, prenom, email, password, fingerprint) {
     verifyButton.textContent = "Chargement...";
     const hashpassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
   
-    fetch("https://systeme-vote-backend-production.up.railway.app/api/verify_code.php", {
+    fetch("backend/api/verify_code.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `nom=${encodeURIComponent(nom)}&prenom=${encodeURIComponent(prenom)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(hashpassword)}&fingerprint=${encodeURIComponent(fingerprint)}&code=${encodeURIComponent(code)}`

@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function fetchAndUpdate() {
-      fetch('https://systeme-vote-backend-production.up.railway.app/api/resultat.php')
+      fetch('backend/api/resultat.php')
         .then(res => res.json())
         .then(json => {
           if (json.status === 'success') {

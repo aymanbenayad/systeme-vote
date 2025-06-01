@@ -85,14 +85,14 @@ function showChangePasswordForm() {
     
     // Préparer les données pour la requête
     const formData = new FormData();
-    const hasholdPassword = CryptoJS.SHA256(oldpassword).toString(CryptoJS.enc.Hex);
-    const hashnewPassword = CryptoJS.SHA256(newpassword).toString(CryptoJS.enc.Hex);
+    const hasholdPassword = CryptoJS.SHA256(oldPassword).toString(CryptoJS.enc.Hex);
+    const hashnewPassword = CryptoJS.SHA256(newPassword).toString(CryptoJS.enc.Hex);
     formData.append('old_password', hasholdPassword);
     formData.append('new_password', hashnewPassword);
     
     // Envoyer la requête au serveur
     document.body.style.cursor = "wait";
-    fetch('https://systeme-vote-backend-production.up.railway.app/api/modify-password.php', {
+    fetch('backend/api/modify-password.php', {
       method: 'POST',
       body: formData,
       credentials: 'same-origin'

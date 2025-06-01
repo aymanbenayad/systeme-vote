@@ -46,7 +46,7 @@ function showDeleteAccountConfirmation() {
       formData.append('password', hashpassword);
       
       // Envoyer la requête au serveur
-      fetch('https://systeme-vote-backend-production.up.railway.app/api/delete-account.php', {
+      fetch('backend/api/delete-account.php', {
         method: 'POST',
         body: formData,
         credentials: 'same-origin'

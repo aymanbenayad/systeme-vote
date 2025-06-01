@@ -61,7 +61,14 @@ try {
             }
             
             // Supprimer le cookie
-            setcookie('session_token', '', time() - 3600, '/', '', true, true); // Secure et HttpOnly
+            setcookie('session_token', '', [
+                'expires' => time() - 3600, // expiration dans le passé = suppression
+                'path' => '/',
+                'secure' => false,
+                'httponly' => true,
+                'samesite' => 'Strict'
+            ]);
+            
         }
         
         http_response_code(200); // OK
@@ -94,7 +101,7 @@ try {
 
     // Configuration de la base de données
     $servername = "localhost";
-    $username = "root";
+        $username = "root";
     $dbpassword = trim(file_get_contents(__DIR__ . '/../libs/sql.passwd'));
     $dbname = "ecovision";
 

@@ -142,7 +142,6 @@ try {
                 setcookie("session_token", "", [
                     'expires' => time() - 3600,
                     'path' => '/',
-                    'domain' => '',
                     'secure' => false,
                     'httponly' => true,
                     'samesite' => 'Strict'

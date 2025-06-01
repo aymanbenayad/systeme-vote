@@ -13,7 +13,7 @@ try {
         http_response_code(401); // Unauthorized
         echo json_encode(['status' => 'error', 'message' => 'Pas admin']);
         exit();
-    }
+    }           
     $session_token = $_COOKIE['session_token'];
     // Configuration de la base de données
     $servername = "localhost";

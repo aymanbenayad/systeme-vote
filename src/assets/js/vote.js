@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData();
             formData.append('choice_id', choiceId);
 
-            const response = await fetch('https://systeme-vote-backend-production.up.railway.app/api/vote.php', {
+            const response = await fetch('backend/api/vote.php', {
                 method: 'POST',
                 body: formData,
                 credentials: 'include'
@@ -282,7 +282,7 @@ function checkVoteStatus() {
     alreadyVoted.style.display = 'none';
     
     // Vérifier si l'utilisateur est connecté
-    fetch('https://systeme-vote-backend-production.up.railway.app/api/session.php?texte=IsConnected')
+    fetch('backend/api/session.php?texte=IsConnected')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success' && data.message === true) {
@@ -303,7 +303,7 @@ function checkVoteStatus() {
 function checkIfUserHasVoted() {
     // Vous devrez implémenter cette vérification selon votre système de vote
     // Par exemple, en ajoutant une case dans session.php pour "HasVoted"
-    fetch('https://systeme-vote-backend-production.up.railway.app/api/session.php?texte=HasVoted')
+    fetch('backend/api/session.php?texte=HasVoted')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success' && data.message === true) {

@@ -71,9 +71,9 @@ $jsonFile = __DIR__ . '/admin/system_lock.json';
 try {
     // Connexion à la base de données
     $servername = "localhost";
-    $username   = "root";
+    $username = "root";
     $dbpassword = trim(file_get_contents(__DIR__ . '/../libs/sql.passwd'));
-    $dbname     = "ecovision";
+    $dbname = "ecovision";
    
     $conn = new mysqli($servername, $username, $dbpassword, $dbname);
    

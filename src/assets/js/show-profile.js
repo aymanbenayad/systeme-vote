@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function checkUserSession() {
-    fetch('https://systeme-vote-backend-production.up.railway.app/api/session.php?texte=IsConnected')
+    fetch('backend/api/session.php?texte=IsConnected')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success' && data.message === true) {
@@ -25,7 +25,7 @@ function checkUserSession() {
 }
 
 function loadUserData() {
-    fetch('https://systeme-vote-backend-production.up.railway.app/api/session.php?texte=UserInfo')
+    fetch('backend/api/session.php?texte=UserInfo')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
@@ -44,7 +44,7 @@ function loadUserData() {
 }
 
 document.getElementById('logout')?.addEventListener('click', function() {
-    fetch('https://systeme-vote-backend-production.up.railway.app/api/session.php?texte=LogOut')
+    fetch('backend/api/session.php?texte=LogOut')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {

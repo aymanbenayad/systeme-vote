@@ -295,7 +295,6 @@ try {
                 setcookie("session_token", $session_token, [
                     'expires' => $cookie_expiry,
                     'path' => '/',
-                    'domain' => '', // Domaine actuel
                     'secure' => false, // À passer à true en production avec HTTPS
                     'httponly' => true,
                     'samesite' => 'Strict'

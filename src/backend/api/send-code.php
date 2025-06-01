@@ -21,7 +21,7 @@ ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../logs/errors/send-code-errors.log');
 error_reporting(E_ALL);
 
-// Set timezone for all date operations
+
 date_default_timezone_set('Africa/Casablanca');
 $date = new DateTime();
 $date->setTimezone(new DateTimeZone('Africa/Casablanca'));

@@ -12,3 +12,19 @@ Stack trace:
 #0 G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php(134): mysqli_stmt_execute(Object(mysqli_stmt))
 #1 {main}
   thrown in G:\My Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 134
+[28-May-2025 23:13:18 Africa/Casablanca] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php:132
+Stack trace:
+#0 {main}
+  thrown in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 132
+[28-May-2025 23:13:31 Africa/Casablanca] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php:132
+Stack trace:
+#0 {main}
+  thrown in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 132
+[28-May-2025 23:16:55 Africa/Casablanca] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php:132
+Stack trace:
+#0 {main}
+  thrown in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 132
+[28-May-2025 23:17:34 Africa/Casablanca] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php:132
+Stack trace:
+#0 {main}
+  thrown in G:\Mon Drive\Ensias\1A\S2\PFA\systeme-vote\src\backend\api\signup.php on line 132

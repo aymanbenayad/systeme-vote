@@ -6,7 +6,7 @@ let currentTime;    // Variable pour stocker l'heure actuelle
 // Fonction pour récupérer les données du timer depuis le backend
 async function getTimerData() {
     try {
-        const response = await fetch('https://systeme-vote-backend-production.up.railway.app/api/read-timer.php');
+        const response = await fetch('backend/api/read-timer.php');
         if (!response.ok) {
             throw new Error('Erreur lors de la récupération des données du timer');
         }
@@ -31,7 +31,7 @@ async function getTimerData() {
 // Fonction pour récupérer l'heure du serveur
 async function getCurrentTime() {
     try {
-        const response = await fetch('https://systeme-vote-backend-production.up.railway.app/api/time.php');
+        const response = await fetch('backend/api/time.php');
         const data = await response.json();
         currentTime = new Date(data.datetime);
     } catch (error) {

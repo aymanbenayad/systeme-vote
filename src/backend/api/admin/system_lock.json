@@ -1,6 +1,6 @@
 {
-    "verrouillage_inscription": true,
+    "verrouillage_inscription": false,
     "masquer_resultat": true,
-    "verrouillage_vote": true,
-    "derniere_modification": "2025-05-02 14:27:47"
+    "verrouillage_vote": false,
+    "derniere_modification": "2025-05-30 11:59:32"
 }

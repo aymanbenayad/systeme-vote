@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    const response = await fetch('https://systeme-vote-backend-production.up.railway.app/api/send-mail.php', {
+    const response = await fetch('backend/api/send-mail.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
